@@ -15,7 +15,7 @@ public class Backtracking {
         backtrack(list, new ArrayList<Integer>(), nums, target, 0);
         return list;
     }
-
+//    primary
 //    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
 //        if(remain < 0) return;
 //        else if(remain == 0)
