@@ -1,13 +1,15 @@
+package p39_combination_sum;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Backtracking {
+public class Solution {
     public static void main(String[] args) {
         int[] nums = {2,3,6,7};
         int target = 7;
 
-        new Backtracking().combinationSum(nums, target);
+        new Solution().combinationSum(nums, target);
     }
     public List<List<Integer>> combinationSum(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
