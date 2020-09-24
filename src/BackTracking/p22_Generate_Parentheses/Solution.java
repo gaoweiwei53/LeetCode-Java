@@ -36,7 +36,7 @@ public class Solution {
     }
     */
     public List<String> generateParenthesis(int n) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         generateOneByOne("", list, n, n);
         return list;
     }
