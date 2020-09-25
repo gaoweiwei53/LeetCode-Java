@@ -18,7 +18,7 @@ public class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> out = new ArrayList<>();
         Arrays.sort(candidates);
-        backtracking(out, new ArrayList<>(), candidates, target, 0);
+        backtracking(out, new ArrayList<Integer>(), candidates, target, 0);
         return  out;
     }
     private void backtracking(List<List<Integer>> out, List<Integer> templist, int[] nums, int remain, int start){
