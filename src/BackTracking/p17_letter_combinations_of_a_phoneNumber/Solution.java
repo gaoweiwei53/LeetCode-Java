@@ -1,39 +1,34 @@
 package p17_letter_combinations_of_a_phoneNumber;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 // ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
 public class Solution {
-    private static final String[] KEYS = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+    //map存储数字与字母的映射关系
+    private String[] map = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    private List<String> res = new ArrayList<>(); //结果集
 
-    public static void main(String[] args) {
-        List<String> ret = new Solution().letterCombinations("23");
-        System.out.println(ret);
-//        String str = "23";
-//        char c = str.charAt(1);
-//        String[] key = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
-    }
-    public static String getType(Object o){
-        return o.getClass().toString();
-    }
     public List<String> letterCombinations(String digits) {
-        List<String> ret = new LinkedList<>();
-        if(digits == null || digits.length() == 0) return ret;
-        combination("", digits, 0, ret);
-        return ret;
+        if(digits.length() == 0 || digits == null) return res; //特判
+        StringBuilder stringBuilder = new StringBuilder(); //存储中间结果
+        dfs(digits,stringBuilder,0);
+        return res;
     }
+    public void dfs(String digits,StringBuilder stringBuilder, int pos){
+        //pos为当前字符串temp的长度
 
-    private void combination(String prefix, String digits, int offset, List<String> ret) {
-        if (offset >= digits.length()) {
-            ret.add(prefix);
+        //递归出口，字符串temp的长度==digits的长度
+        if(pos == digits.length()){
+            res.add(stringBuilder.toString());
             return;
         }
-        // - '0' can convert Character to integer type
-        // + "" can Convert other type to String type
+        char c = digits.charAt(pos); //step1:len从0～digits的长度，每次递归就遍历到一个数字
+        String str = map[c-'0']; //step2:获取数字对应字符串
 
-        String letters = KEYS[(digits.charAt(offset) - '0')];
-        for (int i = 0; i < letters.length(); i++) {
-            combination(prefix + letters.charAt(i), digits, offset + 1, ret);
+        for(int i=0; i<str.length(); i++){ //step3:遍历数字对应的字符串
+            stringBuilder.append(str.charAt(i)); //将遍历到的字母加入stringBuilder
+            dfs(digits,stringBuilder,pos+1); //steo4: 调用下一层递归
+            stringBuilder.deleteCharAt(stringBuilder.length()-1); //撤销选择
         }
     }
 }

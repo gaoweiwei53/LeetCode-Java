@@ -1,15 +1,17 @@
 package p46_permutations;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Deque;
 import java.util.List;
+
 
 public class Solution {
 
     public static void main(String[] args) {
         int[] nums  = {1,2,3};
-        new Solution().permute(nums);
-        System.out.println(res);
+
+        System.out.println(new Solution().permute(nums));
     }
     /*
    public List<List<Integer>> permute(int[] nums) {
@@ -33,9 +35,10 @@ public class Solution {
        }
    }
     */
-    private static List<List<Integer>> res = new LinkedList<>();
+   // private static List<List<Integer>> res = new LinkedList<>();
 
     /* 主函数，输入一组不重复的数字，返回它们的全排列 w */
+    /*
 
     List<List<Integer>> permute(int[] nums) {
         // 记录「路径」
@@ -67,6 +70,8 @@ public class Solution {
         }
     }
 
+     */
+
 
     // 优化：用 used 数组记录已经访问过的位置，以空间换时间
     /*
@@ -96,4 +101,34 @@ public class Solution {
             }
         }
      */
+    public List<List<Integer>> permute(int[] nums){
+        int len = nums.length;
+        List<List<Integer>> res = new ArrayList<>();
+        if (len == 0){
+            return res;
+        }
+        Deque<Integer> path = new ArrayDeque<>();
+        boolean[] used = new boolean[len];
+        dfs(nums, len, 0, path, used, res);
+        return res;
+    }
+    private void dfs(int[] nums, int len, int depth, Deque<Integer> path, boolean[] used,List<List<Integer>> res){
+        // 终止的条件
+        if(depth == len){
+            // 这里很关键
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = 0; i < len; i++) {
+            if (used[i]){
+                continue;
+            }
+            path.addLast(nums[i]);
+            used[i] = true;
+            dfs(nums, len, depth + 1, path, used, res);
+            path.removeLast();
+            used[i] = false;
+        }
+
+    }
 }
