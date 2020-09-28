@@ -12,4 +12,3 @@ def backtrack(路径, 选择列表):
         backtrack(路径, 选择列表)
         撤销选择
 ```
-46 [Permulation](https://www.jianshu.com/p/24c3c23c3440)
