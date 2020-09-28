@@ -8,6 +8,11 @@ public class Solution {
     private String[] map = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
     private List<String> res = new ArrayList<>(); //结果集
 
+    public static void main(String[] args) {
+        List<String> res = new Solution().letterCombinations("23");
+        System.out.println(res);
+    }
+
     public List<String> letterCombinations(String digits) {
         if(digits.length() == 0 || digits == null) return res; //特判
         StringBuilder stringBuilder = new StringBuilder(); //存储中间结果
