@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
-        int[] nums = {5,3,2};
+        int[] nums = {2,3,5};
         int target = 8;
 
         List<List<Integer>> res = new Solution().combinationSum(nums, target);
@@ -50,25 +50,27 @@ public class Solution {
     // 自己的写的
 
     public List<List<Integer>> combinationSum(int[] nums, int target){
-        List<List<Integer>> list = new ArrayList<>();
-        if (nums == null) return list;
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null) return res;
         Arrays.sort(nums);
         List<Integer> curr = new ArrayList<>();
-        backtrack(nums, target, list, curr, 0, 0);
-        return list;
+        backtrack(nums, target, res, curr,0);
+        return res;
     }
     // 可能会出现重复的情况 [[2, 2, 3], [2, 3, 2], [3, 2, 2], [7]]，怎么办
     // 可先排序，for循环不要从 0 开始, 使用一个 start标识
-    private void backtrack(int[] nums, int target, List<List<Integer>> list, List<Integer> curr, int sum, int start){
-        if (sum == target){
+
+    // Sum 可不用
+    private void backtrack(int[] nums, int target, List<List<Integer>> res, List<Integer> curr, int start){
+        if ( target == 0){
             // 要用 new 新建 对象，为什么？
-            list.add(new ArrayList<>(curr));
+            res.add(new ArrayList<>(curr));
             return;
         }
         else{
-            for (int i = start; i < nums.length && sum + nums[i] <= target; i++) {
+            for (int i = start; i < nums.length && target - nums[i] >= 0; i++) {
                 curr.add(nums[i]);
-                backtrack(nums, target, list, curr, sum + nums[i],i);
+                backtrack(nums, target - nums[i], res, curr, i );
                 curr.remove(curr.size() - 1);
             }
         }
