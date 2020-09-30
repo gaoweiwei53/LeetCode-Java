@@ -72,7 +72,6 @@ public class Solution {
             if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == false) {
                 continue;
             }
-
             path.addLast(nums[i]);
             used[i] = true;
 
