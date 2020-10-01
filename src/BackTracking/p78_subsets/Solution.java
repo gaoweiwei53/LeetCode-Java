@@ -24,7 +24,6 @@ public class Solution {
             tempList.remove(tempList.size() - 1);
         }
     }
-    // 使用移位运算
     /*
     public static List<List<Integer>> subsets(int[] nums) {
         //子集的长度是2的nums.length次方，这里通过移位计算
