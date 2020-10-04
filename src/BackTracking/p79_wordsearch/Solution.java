@@ -1,7 +1,5 @@
 package p79_wordsearch;
 
-import java.util.function.ToDoubleBiFunction;
-
 public class Solution {
 
     private boolean[][] marked;
@@ -27,6 +25,7 @@ public class Solution {
         this.word = word;
         this.board = board;
 
+        // 从字符矩阵中寻找与字符串开头匹配的字母
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (dfs(i, j, 0)) {
@@ -34,6 +33,7 @@ public class Solution {
                 }
             }
         }
+        // 如果第一个字母都找不到，则返回false
         return false;
     }
 
@@ -42,7 +42,10 @@ public class Solution {
             return board[i][j] == word.charAt(start);
         }
         if (board[i][j] == word.charAt(start)) {
+
+            // 找到一个则将此位置设为true
             marked[i][j] = true;
+            // 从四个方向寻找
             for (int k = 0; k < 4; k++) {
                 int newX = i + direction[k][0];
                 int newY = j + direction[k][1];
@@ -52,8 +55,10 @@ public class Solution {
                     }
                 }
             }
+            // 如果当前字符匹配，但是后面四个方向都找不到匹配的字符，则将当前位置重新置为false
             marked[i][j] = false;
         }
+        // 返回false, 从其他位置重新寻找
         return false;
     }
 
@@ -63,18 +68,18 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        char[][] board =
-                {
-                        {'A', 'B', 'C', 'E'},
-                        {'S', 'F', 'C', 'S'},
-                        {'A', 'D', 'E', 'E'}
-                };
+//        char[][] board =
+//                {
+//                        {'A', 'B', 'C', 'E'},
+//                        {'S', 'F', 'C', 'S'},
+//                        {'A', 'D', 'E', 'E'}
+//                };
+//
+//        String word = "ABCCED";
 
-        String word = "ABCCED";
 
-
-//        char[][] board = {{'a', 'b'}};
-//        String word = "ba";
+        char[][] board = {{'a', 'b'}};
+        String word = "ba";
         Solution solution = new Solution();
         boolean exist = solution.exist(board, word);
         System.out.println(exist);
