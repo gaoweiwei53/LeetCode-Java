@@ -2,9 +2,9 @@ package p93_restore_ip_address;
 
 import java.util.*;
 /*
-public class Solution {
+public class p5_longestpalindromicsubstring.Solution {
     public static void main(String[] args) {
-        List<String> res = new Solution().restoreIpAddresses("25525511135");
+        List<String> res = new p5_longestpalindromicsubstring.Solution().restoreIpAddresses("25525511135");
         System.out.println(res);
     }
 
@@ -68,9 +68,9 @@ public class Solution {
  */
 
 /*
-class Solution {
+class p5_longestpalindromicsubstring.Solution {
     public static void main(String[] args) {
-        List<String> res = new Solution().restoreIpAddresses("233233233");
+        List<String> res = new p5_longestpalindromicsubstring.Solution().restoreIpAddresses("233233233");
         System.out.println(res);
     }
 

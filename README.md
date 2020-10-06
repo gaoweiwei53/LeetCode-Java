@@ -18,3 +18,8 @@ def backtrack(路径, 选择列表):
 [89.Gray Code](https://leetcode-cn.com/problems/gray-code/)
 
 [93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
+
+## Dynamic Programing
+[5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+
+[滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)

@@ -15,7 +15,7 @@ import java.util.List;
  * ]
  */
 /*
-public class Solution {
+public class p5_longestpalindromicsubstring.Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> out = new ArrayList<>();
         Arrays.sort(candidates);
