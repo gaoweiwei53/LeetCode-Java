@@ -1,5 +1,7 @@
 package p707_Design_Linked_list;
 
+import java.util.LinkedList;
+
 public class MyLinkedList {
 
     int size;
@@ -9,7 +11,7 @@ public class MyLinkedList {
         int val;
         Node next;
         Node(int x){
-            val = x;
+            this.val = x;
         }
     }
     public MyLinkedList(){
@@ -18,7 +20,8 @@ public class MyLinkedList {
     }
     public int get(int index){
         // if index is invalid
-        if (index < 0 || index > size) return -1;
+        // 注意 是 index 大于等于 size
+        if (index < 0 || index >= size) return -1;
         Node curr = head;
         for (int i = 0; i < index + 1; i++) {
             curr = curr.next;
@@ -28,11 +31,9 @@ public class MyLinkedList {
     public void addAtHead(int val){
         addAtIndex(0, val);
     }
-    public void addAtTail(int val){
-        addAtIndex(size, val);
-
-    }
+    public void addAtTail(int val) { addAtIndex(size, val); }
     public void addAtIndex(int index, int val){
+
         if (index > size) return;
         if (index < 0) index = 0;
         ++size;
@@ -46,12 +47,23 @@ public class MyLinkedList {
     }
 
     public void deleteAtIndex(int index) {
-        if (index < 0 || index > size) return;
+
+        if (index < 0 || index >= size) return;
         size--;
         Node pred = head;
         for (int i = 0; i < index; i++) {
             pred = pred.next;
         }
         pred.next = pred.next.next;
+    }
+
+    public static void main(String[] args) {
+        MyLinkedList list = new MyLinkedList();
+        list.addAtHead(0);
+        list.addAtIndex(1,1);
+        list.addAtIndex(2,2);
+        list.addAtTail(3);
+        int val = list.get(2);
+        list.deleteAtIndex(2);
     }
 }
