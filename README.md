@@ -61,3 +61,6 @@ return false;   // change return value to fit specific problem
 **方法：** 双指针，先得到两个链表的长度差，两个指针再从距尾部相同距离的位置遍历，则相交的位置即为所求位置
 * [删除倒数第n个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)  
 **方法：** 使用一个dummy节点解决删除头节点的问题 可用一个指针和一个记录长度的变量完成
+* [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)  
+**方法：** 使用双指针，1)cur指向head, pre指向null, 2)用tmp保存curr的下个节点, 3)将curr.next指向pre, 4)pre和curr分别向后移动一步.
+递归方法不懂 
