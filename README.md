@@ -64,3 +64,7 @@ return false;   // change return value to fit specific problem
 * [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)  
 **方法：** 使用双指针，1)cur指向head, pre指向null, 2)用tmp保存curr的下个节点, 3)将curr.next指向pre, 4)pre和curr分别向后移动一步.
 递归方法不懂 
+* [奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/)  
+**方法：** 将奇节点放在一个链表里，偶链表放在另一个链表里。然后把偶链表接在奇链表的尾部。使用了3个指针。
+* [回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/)  
+**方法：** 反转一半链表后，将两个链表的节点按顺序一一比较
