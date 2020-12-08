@@ -2,13 +2,14 @@ package p234_Palindrome_Linked_List;
 
 
  // Definition for singly-linked list.
-  class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+
 
 class Solution {
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;

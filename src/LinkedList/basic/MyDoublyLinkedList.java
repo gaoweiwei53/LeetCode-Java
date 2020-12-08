@@ -1,19 +1,16 @@
 package basic;
 
-//public class MyDoublyLinkedList {
-//}
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode prev;
-    ListNode(int x) { val = x; }
-}
-
-class MyLinkedList {
+public class MyDoublyLinkedList {
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode prev;
+        ListNode(int x) { val = x; }
+    }
     int size;
     // sentinel nodes as pseudo-head and pseudo-tail
     ListNode head, tail;
-    public MyLinkedList() {
+    public MyDoublyLinkedList() {
         size = 0;
         head = new ListNode(0);
         tail = new ListNode(0);
