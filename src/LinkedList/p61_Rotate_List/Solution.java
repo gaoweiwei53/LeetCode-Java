@@ -54,7 +54,4 @@ class Solution {
 //
 //        return new_head;
     }
-
-
-    }
 }
