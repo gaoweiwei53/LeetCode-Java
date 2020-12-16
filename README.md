@@ -71,7 +71,8 @@ return false;   // change return value to fit specific problem
 **方法：** 将奇节点放在一个链表里，偶链表放在另一个链表里。然后把偶链表接在奇链表的尾部。使用了3个指针。
 * [回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/)  
 **方法：** 反转一半链表后，将两个链表的节点按顺序一一比较
-
+* [旋转链表](https://leetcode-cn.com/problems/rotate-list/)
+**方法：** 先将链表变为环，再找出新的头节点，切断环
 ## 递归
 1. [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 [动画解释](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/yi-kan-jiu-hui-yi-xie-jiu-fei-xiang-jie-di-gui-by-/)
