@@ -1,4 +1,4 @@
-package p5_longestpalindromicsubstring;
+package DynamicPrograming.p5_longestpalindromicsubstring;
 
 public class Solution {
     // 暴力解法

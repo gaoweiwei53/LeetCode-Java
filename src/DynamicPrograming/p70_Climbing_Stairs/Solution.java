@@ -1,4 +1,4 @@
-package p70_Climbing_Stairs;
+package DynamicPrograming.p70_Climbing_Stairs;
 
 class Solution {
     public int climbStairs(int n) {

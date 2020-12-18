@@ -1,4 +1,4 @@
-package p91_Decode_Ways;
+package DynamicPrograming.p91_Decode_Ways;
 
 public class Solution {
     public int numDecodings(String s) {

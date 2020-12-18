@@ -1,4 +1,4 @@
-package p64_Minimum_Path_Sum;
+package DynamicPrograming.p64_Minimum_Path_Sum;
 
 public class Solution {
     public int minPathSum(int[][] grid) {

@@ -1,4 +1,4 @@
-package basic;
+package LinkedList.basic;
 
 public class MyDoublyLinkedList {
     class ListNode {
