@@ -1,4 +1,4 @@
-package p79_wordsearch;
+package BackTracking.p79_wordsearch;
 
 public class Solution {
 

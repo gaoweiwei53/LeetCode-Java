@@ -1,4 +1,4 @@
-package p160_Intersection_of_Two_Linked_Lists;
+package LinkedList.p160_Intersection_of_Two_Linked_Lists;
 
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
