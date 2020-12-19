@@ -1,4 +1,4 @@
-package BackTracking.p22_Generate_Parentheses;
+package p22_Generate_Parentheses;
 
 import java.util.ArrayList;
 import java.util.List;

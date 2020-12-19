@@ -1,4 +1,4 @@
-package LinkedList.p203_Remove_Linked_List_Elements;
+package p203_Remove_Linked_List_Elements;
 
 class Solution {
     public ListNode removeElements(ListNode head, int val) {

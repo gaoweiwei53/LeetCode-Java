@@ -1,4 +1,4 @@
-package DynamicPrograming.p62_Unique_Paths;
+package p62_Unique_Paths;
 /*
 public class Solution {
     public int uniquePaths(int m, int n) {

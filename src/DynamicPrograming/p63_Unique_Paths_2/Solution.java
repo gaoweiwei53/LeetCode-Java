@@ -1,4 +1,4 @@
-package DynamicPrograming.p63_Unique_Paths_2;
+package p63_Unique_Paths_2;
 /*
 class Solution {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

@@ -1,4 +1,4 @@
-package LinkedList.p21_Merge_Two_Sorted_Lists;
+package p21_Merge_Two_Sorted_Lists;
 
 public class Solution {
 

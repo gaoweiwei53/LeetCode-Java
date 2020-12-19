@@ -1,4 +1,4 @@
-package BackTracking.p46_permutations;
+package p46_permutations;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

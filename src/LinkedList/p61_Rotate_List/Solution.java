@@ -1,4 +1,4 @@
-package LinkedList.p61_Rotate_List;
+package p61_Rotate_List;
 
 class Solution {
     public class ListNode{

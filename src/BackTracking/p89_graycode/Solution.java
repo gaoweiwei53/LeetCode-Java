@@ -1,4 +1,4 @@
-package BackTracking.p89_graycode;
+package p89_graycode;
 
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package LinkedList.p328_Odd_Even_Linked_List;
+package p328_Odd_Even_Linked_List;
 
 public class Solution {
     public ListNode oddEvenList(ListNode head) {

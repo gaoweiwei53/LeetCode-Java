@@ -1,4 +1,4 @@
-package LinkedList.p24_Swap_Nodes_in_Pairs;
+package p24_Swap_Nodes_in_Pairs;
 
 
 

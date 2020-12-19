@@ -1,4 +1,4 @@
-package BackTracking.p17_letter_combinations_of_a_phoneNumber;
+package p17_letter_combinations_of_a_phoneNumber;
 
 import java.util.ArrayList;
 import java.util.List;

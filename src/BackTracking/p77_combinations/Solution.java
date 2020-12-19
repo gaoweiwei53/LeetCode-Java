@@ -1,4 +1,4 @@
-package BackTracking.p77_combinations;
+package p77_combinations;
 
 import java.util.ArrayList;
 import java.util.List;

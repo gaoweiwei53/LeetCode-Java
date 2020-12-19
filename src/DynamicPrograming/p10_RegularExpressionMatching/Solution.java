@@ -1,4 +1,4 @@
-package DynamicPrograming.p10_RegularExpressionMatching;
+package p10_RegularExpressionMatching;
 
 public class Solution {
 }

@@ -1,4 +1,4 @@
-package LinkedList.p707_Design_Linked_list;
+package p707_Design_Linked_list;
 
 import java.util.LinkedList;
 

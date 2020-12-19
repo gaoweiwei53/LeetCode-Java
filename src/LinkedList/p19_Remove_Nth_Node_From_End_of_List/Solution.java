@@ -1,4 +1,4 @@
-package LinkedList.p19_Remove_Nth_Node_From_End_of_List;
+package p19_Remove_Nth_Node_From_End_of_List;
 
 public class Solution {
     // Definition for singly-linked list.

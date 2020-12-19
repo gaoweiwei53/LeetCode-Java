@@ -1,4 +1,4 @@
-package LinkedList.p707_Design_Linked_list;
+package p707_Design_Linked_list;
 
 public class MyDoublyLinkedList<E> {
     int size = 0;

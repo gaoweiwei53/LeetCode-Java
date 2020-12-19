@@ -1,4 +1,4 @@
-package LinkedList.p141_Linked_List_Cycle;
+package p141_Linked_List_Cycle;
 
 
 //  Definition for singly-linked list.

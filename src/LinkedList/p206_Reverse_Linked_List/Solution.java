@@ -1,4 +1,4 @@
-package LinkedList.p206_Reverse_Linked_List;
+package p206_Reverse_Linked_List;
 
 public class Solution {
     public ListNode reverseList(ListNode head) {

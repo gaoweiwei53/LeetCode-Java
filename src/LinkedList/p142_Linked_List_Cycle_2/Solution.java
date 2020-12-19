@@ -1,4 +1,4 @@
-package LinkedList.p142_Linked_List_Cycle_2;
+package p142_Linked_List_Cycle_2;
 
 
 

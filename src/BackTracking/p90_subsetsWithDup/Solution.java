@@ -1,4 +1,4 @@
-package BackTracking.p90_subsetsWithDup;
+package p90_subsetsWithDup;
 
 import java.util.ArrayList;
 import java.util.Arrays;

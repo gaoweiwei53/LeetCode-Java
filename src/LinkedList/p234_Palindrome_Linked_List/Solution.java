@@ -1,4 +1,4 @@
-package LinkedList.p234_Palindrome_Linked_List;
+package p234_Palindrome_Linked_List;
 
 
  // Definition for singly-linked list.

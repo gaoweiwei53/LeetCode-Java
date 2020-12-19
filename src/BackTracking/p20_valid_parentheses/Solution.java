@@ -1,4 +1,4 @@
-package BackTracking.p20_valid_parentheses;
+package p20_valid_parentheses;
 
 import java.util.Stack;
 

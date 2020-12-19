@@ -1,4 +1,4 @@
-package BackTracking.p40_combination_sum2;
+package p40_combination_sum2;
 
 import java.util.ArrayList;
 import java.util.Arrays;

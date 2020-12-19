@@ -1,4 +1,4 @@
-package BackTracking.p78_subsets;
+package p78_subsets;
 
 import java.util.ArrayList;
 import java.util.List;

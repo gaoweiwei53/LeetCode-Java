@@ -1,4 +1,4 @@
-package BackTracking.p47_permutation2;
+package p47_permutation2;
 
 import java.util.*;
 
