@@ -1,22 +1,6 @@
 package p206_Reverse_Linked_List;
 
 public class Solution {
-    public ListNode reverseList(ListNode head) {
-        // 双指针解法
-        ListNode curr = null;
-        ListNode pre = head;
-        while (pre != null) {
-            ListNode tmp = pre.next;
-            pre.next = curr;
-            curr = pre;
-            pre = tmp;
-        }
-        return curr;
-        // 递归
-
-
-
-    }
     class ListNode {
         int val;
         ListNode next;
@@ -25,4 +9,27 @@ public class Solution {
             next = null;
         }
     }
+    public ListNode reverseList(ListNode head) {
+//        // 双指针解法
+//        if (head == null || head.next == null) return head;
+//        ListNode curr = head;
+//        ListNode pre = null;
+//        while(curr != null){
+//            ListNode tmp = curr.next;
+//            curr.next  = pre;
+//            pre = curr;
+//            curr = tmp;
+//        }
+//        return pre;
+
+        // 递归
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode p = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
+    }
+
 }
