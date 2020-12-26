@@ -1,5 +1,4 @@
-# LeetCode-Java
-## Backtracking
+# 1. Backtracking
 ```
 result = []
 def backtrack(路径, 选择列表):
@@ -19,7 +18,7 @@ def backtrack(路径, 选择列表):
 
 [93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
 
-## Dynamic Programing
+# 2. Dynamic Programing
 [5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
 [滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)
@@ -78,3 +77,7 @@ return false;   // change return value to fit specific problem
 [动画解释](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/yi-kan-jiu-hui-yi-xie-jiu-fei-xiang-jie-di-gui-by-/)
 2. [24. Swap Nodes in Pairs](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
 3. [92. Reverse Linked List II](https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/bu-bu-chai-jie-ru-he-di-gui-di-fan-zhuan-lian-biao/)
+# 3. Array
+## 双指针
+1) [283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/)  
+[解法](https://leetcode-cn.com/problems/move-zeroes/solution/dong-hua-yan-shi-283yi-dong-ling-by-wang_ni_ma/)
