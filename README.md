@@ -81,3 +81,5 @@ return false;   // change return value to fit specific problem
 ## 双指针
 1) [283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/)  
 [解法](https://leetcode-cn.com/problems/move-zeroes/solution/dong-hua-yan-shi-283yi-dong-ling-by-wang_ni_ma/)
+2) [26. Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)  
+[题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/solution/shan-chu-pai-xu-shu-zu-zhong-de-zhong-fu-xiang-by-/)

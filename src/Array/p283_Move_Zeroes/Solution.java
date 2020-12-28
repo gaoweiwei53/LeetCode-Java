@@ -17,6 +17,7 @@ class Solution {
         for(int i=j;i<nums.length;++i) {
             nums[i] = 0;
         }
+
         // 解法 2
 //        if(nums==null) {
 //            return;
