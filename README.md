@@ -72,6 +72,8 @@ return false;   // change return value to fit specific problem
 **方法：** 反转一半链表后，将两个链表的节点按顺序一一比较
 * [旋转链表](https://leetcode-cn.com/problems/rotate-list/)  
 **方法：** 先将链表变为环，再找出新的头节点，切断环
+  
+1) [2. Add Two Numbers](https://leetcode-cn.com/problems/add-two-numbers/)
 ## 递归
 1. [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 [动画解释](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/yi-kan-jiu-hui-yi-xie-jiu-fei-xiang-jie-di-gui-by-/)
@@ -83,3 +85,132 @@ return false;   // change return value to fit specific problem
 [解法](https://leetcode-cn.com/problems/move-zeroes/solution/dong-hua-yan-shi-283yi-dong-ling-by-wang_ni_ma/)
 2) [26. Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)  
 [题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/solution/shan-chu-pai-xu-shu-zu-zhong-de-zhong-fu-xiang-by-/)
+   
+3) [11. Container With Most Water](https://leetcode-cn.com/problems/container-with-most-water/)
+4) [15. 3Sum](https://leetcode-cn.com/problems/3sum/)
+如何避免重复的结果? 排序!
+   
+5) [16. 3Sum Closest](https://leetcode-cn.com/problems/3sum-closest/)
+
+# Binary Search
+二分查找一般由三个主要部分组成：
+1) 预处理 —— 如果集合未排序，则进行排序。
+2) 二分查找 —— 使用循环或递归在每次比较后将查找空间划分为两半。
+3) 后处理 —— 在剩余空间中确定可行的候选者。
+## 模板 1
+```java
+int binarySearch(int[] nums, int target){
+  if(nums == null || nums.length == 0)
+    return -1;
+
+  int left = 0, right = nums.length - 1;
+  while(left <= right){
+    // Prevent (left + right) overflow
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target){ return mid; }
+    else if(nums[mid] < target) { left = mid + 1; }
+    else { right = mid - 1; }
+  }
+
+  // End Condition: left > right
+  return -1;
+}
+```
+区分语法
+
+- 初始条件：left = 0, right = length-1
+- 终止：left > right
+- 向左查找：right = mid-1
+- 向右查找：left = mid+1
+
+## 模板二
+```java
+int binarySearch(int[] nums, int target){
+  if(nums == null || nums.length == 0)
+    return -1;
+
+  int left = 0, right = nums.length;
+  while(left < right){
+    // Prevent (left + right) overflow
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target){ return mid; }
+    else if(nums[mid] < target) { left = mid + 1; }
+    else { right = mid; }
+  }
+
+  // Post-processing:
+  // End Condition: left == right
+  if(left != nums.length && nums[left] == target) return left;
+  return -1;
+}
+```
+
+### 区分语法
+
+- 初始条件：left = 0, right = length
+- 终止：left == right
+- 向左查找：right = mid
+- 向右查找：left = mid+1
+
+## 模板三
+```java
+int binarySearch(int[] nums, int target) {
+    if (nums == null || nums.length == 0)
+        return -1;
+
+    int left = 0, right = nums.length - 1;
+    while (left + 1 < right){
+        // Prevent (left + right) overflow
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+
+    // Post-processing:
+    // End Condition: left + 1 == right
+    if(nums[left] == target) return left;
+    if(nums[right] == target) return right;
+    return -1;
+}
+```
+区分语法
+
+- 初始条件：left = 0, right = length-1
+- 终止：left + 1 == right
+- 向左查找：right = mid
+- 向右查找：left = mid
+
+## 题目
+1) [局部有序二分查找 33. Search in Rotated Sorted Array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
+2) [153. Find Minimum in Rotated Sorted Array](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+3) [34. Find First and Last Position of Element in Sorted Array](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+4) [没理解题目意思 658. Find K Closest Elements](https://leetcode-cn.com/problems/find-k-closest-elements/)
+
+# 滑动窗口
+1) [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+
+# String
+1) [不懂 6. ZigZag Conversion](https://leetcode-cn.com/problems/zigzag-conversion/)
+
+# Math and String
+- `currChar - '0'`: 可将字符转为数字
+- 将int转为字符串
+    1) `String s = String.valueOf(a);`
+    2) `String s1 = a + "";`
+    3) `String s2 = Integer.toString(a);`
+
+1) [7. Reverse Integer](https://leetcode-cn.com/problems/reverse-integer/)
+[溢出](https://leetcode-cn.com/problems/reverse-integer/solution/tu-jie-7-zheng-shu-fan-zhuan-by-wang_ni_ma/)
+   
+2) [8. String to Integer (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+3) [9. Palindrome Number](https://leetcode-cn.com/problems/palindrome-number/)
+4) [28. Implement strStr()](https://leetcode-cn.com/problems/implement-strstr/)
+> 涉及KMP算法
+
+# 栈
+1) [20. Valid Parentheses](https://leetcode-cn.com/problems/valid-parentheses/)
