@@ -1,3 +1,12 @@
+# 优秀的解题方法
+1) [二分 + 倍增乘法解法（含模板）](https://leetcode-cn.com/problems/divide-two-integers/solution/shua-chuan-lc-er-fen-bei-zeng-cheng-fa-j-m73b/)
+2) [字符串相乘](https://leetcode-cn.com/problems/multiply-strings/solution/gao-pin-mian-shi-xi-lie-zi-fu-chuan-cheng-fa-by-la/)
+3) [旋转图像/二位数组](https://leetcode-cn.com/problems/rotate-image/solution/ji-qiao-ti-zai-zeng-song-yi-wei-xing-shi-377z/)
+4) [快速幂](https://leetcode-cn.com/problems/powx-n/solution/50-powx-n-kuai-su-mi-qing-xi-tu-jie-by-jyd/)
+  - 快速幂算法的核心思想就是每一步都把指数分成两半，而相应的底数做平方运算。
+
+5) [合并区间，贪心算法](https://leetcode-cn.com/problems/merge-intervals/solution/tan-xin-suan-fa-java-by-liweiwei1419-3/)
+6) [区间问题](https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow)
 # 1. Backtracking
 ```
 result = []
@@ -19,11 +28,12 @@ def backtrack(路径, 选择列表):
 [93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
 
 # 2. Dynamic Programing
-[5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+1)[5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
-[滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)
+2) [滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)
+3) [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)
 
-## Linklist
+# 3. Linklist
 [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 [动画解释](https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/yi-kan-jiu-hui-yi-xie-jiu-fei-xiang-jie-di-gui-by-/)
 ### Two point
@@ -91,6 +101,7 @@ return false;   // change return value to fit specific problem
 如何避免重复的结果? 排序!
    
 5) [16. 3Sum Closest](https://leetcode-cn.com/problems/3sum-closest/)
+6) [54. Spiral Matrix](https://leetcode-cn.com/problems/spiral-matrix/)
 
 # Binary Search
 二分查找一般由三个主要部分组成：
@@ -190,7 +201,7 @@ int binarySearch(int[] nums, int target) {
 2) [153. Find Minimum in Rotated Sorted Array](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
 3) [34. Find First and Last Position of Element in Sorted Array](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 4) [没理解题目意思 658. Find K Closest Elements](https://leetcode-cn.com/problems/find-k-closest-elements/)
-
+5) [35. Search Insert Position](https://leetcode-cn.com/problems/search-insert-position/https://leetcode-cn.com/problems/search-insert-position/)
 # 滑动窗口
 1) [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
@@ -212,5 +223,35 @@ int binarySearch(int[] nums, int target) {
 4) [28. Implement strStr()](https://leetcode-cn.com/problems/implement-strstr/)
 > 涉及KMP算法
 
+5) [29. Divide Two Integers](https://leetcode-cn.com/problems/divide-two-integers/) ****
+6) [43. Multiply Strings](https://leetcode-cn.com/problems/multiply-strings/)
+
 # 栈
 1) [20. Valid Parentheses](https://leetcode-cn.com/problems/valid-parentheses/)
+
+# 分治、动态规划、贪心
+1) 分治
+
+分治（即分而治之），把一个复杂的问题分成多个相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。
+
+适用场景：二分搜索、归并排序、快速排序、大整数乘法、第K小元素、最近点对、快速傅里叶变换等。
+
+
+
+2) 动态规划
+
+动态规划法也是把问题一层一层地分解为规模逐渐减小的同类型的子问题。动态规划通常用来求最优化问题。此类问题可以有很多可行解，我们求出的是一个最优解，可能存在多个最优解。（最优子结构、公共子问题）
+
+与分治法的区别是：分治的子问题是相互独立的，动态规划最好解决有公共子问题的，子问题相关性很大。
+
+使用场景：矩阵连乘、钢条切割、最长公共子序列、最优二叉搜索树、流水作业调度、0/1背包问题等。
+
+
+
+3) 贪心
+
+通过局部最优选择达到全局最优选择。贪心算法不一定总产生最优解，贪心算法是否产生优化解，需严格证明贪心算法产生最优解的条件：（最优子结构、贪心选择性）
+
+贪心选择性：当一个问题的全局最优解可以通过局部最优解得到，称这个问题具有贪心选择性。
+
+适用场景：活动选择问题、哈夫曼编码问题、最小生成树问题、单源最短路径问题等
