@@ -7,6 +7,14 @@
 
 5) [合并区间，贪心算法](https://leetcode-cn.com/problems/merge-intervals/solution/tan-xin-suan-fa-java-by-liweiwei1419-3/)
 6) [区间问题](https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow)
+7) [快速排序](https://leetcode-cn.com/problems/sort-colors/solution/kuai-su-pai-xu-partition-guo-cheng-she-ji-xun-huan/)
+8) [双指针](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/solution/shuang-zhi-zhen-zhi-tong-xiang-zhi-zhen-che-di-jie/)
+9) [合并有序数组](https://leetcode-cn.com/problems/merge-sorted-array/solution/he-bing-liang-ge-you-xu-shu-zu-by-leetcode/)
+10) [二叉树中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li/)
+11) [二分查找树](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-7/)
+12) [图解leetcode](https://leetcode-cn.com/leetbook/detail/illustrate-lcof/)
+13) [二分查找树数量](https://leetcode-cn.com/problems/unique-binary-search-trees/solution/hua-jie-suan-fa-96-bu-tong-de-er-cha-sou-suo-shu-b/)
+15) [验证是否为有效的二分查找树](https://leetcode-cn.com/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/)
 # 1. Backtracking
 ```
 result = []
@@ -202,6 +210,7 @@ int binarySearch(int[] nums, int target) {
 3) [34. Find First and Last Position of Element in Sorted Array](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 4) [没理解题目意思 658. Find K Closest Elements](https://leetcode-cn.com/problems/find-k-closest-elements/)
 5) [35. Search Insert Position](https://leetcode-cn.com/problems/search-insert-position/https://leetcode-cn.com/problems/search-insert-position/)
+6) [74. Search a 2D Matrix](https://leetcode-cn.com/problems/search-a-2d-matrix/)
 # 滑动窗口
 1) [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
@@ -255,3 +264,16 @@ int binarySearch(int[] nums, int target) {
 贪心选择性：当一个问题的全局最优解可以通过局部最优解得到，称这个问题具有贪心选择性。
 
 适用场景：活动选择问题、哈夫曼编码问题、最小生成树问题、单源最短路径问题等
+
+# 二叉树
+1) [94. Binary Tree Inorder Traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+# 二分查找树
+## 定义
+1. 若它的左子树不为空，则左子树上所有结点的值均小于等于根结点的值；
+2. 若它的右子树不为空，则右子树上所有结点的值均大于等于根结点的值；
+3. 它的左右子树均为二分查找树
+
+## 题目
+1) [95. Unique Binary Search Trees II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)
+2) [96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)
+3) [98. Validate Binary Search Tree](https://leetcode-cn.com/problems/validate-binary-search-tree/)
