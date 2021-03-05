@@ -3,7 +3,7 @@
 2) [字符串相乘](https://leetcode-cn.com/problems/multiply-strings/solution/gao-pin-mian-shi-xi-lie-zi-fu-chuan-cheng-fa-by-la/)
 3) [旋转图像/二位数组](https://leetcode-cn.com/problems/rotate-image/solution/ji-qiao-ti-zai-zeng-song-yi-wei-xing-shi-377z/)
 4) [快速幂](https://leetcode-cn.com/problems/powx-n/solution/50-powx-n-kuai-su-mi-qing-xi-tu-jie-by-jyd/)
-  - 快速幂算法的核心思想就是每一步都把指数分成两半，而相应的底数做平方运算。
+    - 快速幂算法的核心思想就是每一步都把指数分成两半，而相应的底数做平方运算。
 
 5) [合并区间，贪心算法](https://leetcode-cn.com/problems/merge-intervals/solution/tan-xin-suan-fa-java-by-liweiwei1419-3/)
 6) [区间问题](https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow)
