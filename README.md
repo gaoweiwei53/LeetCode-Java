@@ -15,6 +15,8 @@
 12) [图解leetcode](https://leetcode-cn.com/leetbook/detail/illustrate-lcof/)
 13) [二分查找树数量](https://leetcode-cn.com/problems/unique-binary-search-trees/solution/hua-jie-suan-fa-96-bu-tong-de-er-cha-sou-suo-shu-b/)
 15) [验证是否为有效的二分查找树](https://leetcode-cn.com/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/)
+16) [BFS, DFS](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/solution/bfs-de-shi-yong-chang-jing-zong-jie-ceng-xu-bian-l/)
+17) [平衡二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jian-dan-di-gui-bi-xu-miao-dong-by-sweetiee/)
 # 1. Backtracking
 ```
 result = []
@@ -266,6 +268,42 @@ int binarySearch(int[] nums, int target) {
 适用场景：活动选择问题、哈夫曼编码问题、最小生成树问题、单源最短路径问题等
 
 # 二叉树
+## 广度优先遍历
+```java
+public void traverseLevelOrder() {
+    if (root == null) {
+        return;
+    }
+
+    Queue<Node> nodes = new LinkedList<>();
+    nodes.add(root);
+
+    while (!nodes.isEmpty()) {
+
+        Node node = nodes.remove();
+
+        System.out.print(" " + node.value);
+
+        if (node.left != null) {
+            nodes.add(node.left);
+        }
+
+        if (node.right != null) {
+            nodes.add(node.right);
+        }
+    }
+}
+```
+## 深度优先遍历
+```java
+public void traverseInOrder(Node node) {
+    if (node != null) {
+        traverseInOrder(node.left);
+        System.out.print(" " + node.value);
+        traverseInOrder(node.right);
+    }
+}
+```
 1) [94. Binary Tree Inorder Traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 # 二分查找树
 ## 定义
@@ -277,3 +315,13 @@ int binarySearch(int[] nums, int target) {
 1) [95. Unique Binary Search Trees II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)
 2) [96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)
 3) [98. Validate Binary Search Tree](https://leetcode-cn.com/problems/validate-binary-search-tree/)
+4) [102. Binary Tree Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+5) [103. Binary Tree Zigzag Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
+6) [104. Maximum Depth of Binary Tree](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+7) [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+8) [107. Binary Tree Level Order Traversal II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/)
+9) [108. Convert Sorted Array to Binary Search Tree](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
+10) [109. Convert Sorted List to Binary Search Tree](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/)
+11) [110. Balanced Binary Tree](https://leetcode-cn.com/problems/balanced-binary-tree/)
+12) [112. Path Sum](https://leetcode-cn.com/problems/path-sum/)
+13) [113. Path Sum II](https://leetcode-cn.com/problems/path-sum-ii/)
