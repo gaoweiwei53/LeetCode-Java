@@ -18,7 +18,6 @@ public class Solution {
           this.right = right;
       }
   }
-
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> queue = new ArrayDeque<>();
@@ -46,3 +45,6 @@ public class Solution {
         return res;
     }
 }
+
+// 是广度优先遍历的一种应用
+// 要借助 队列queue
