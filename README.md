@@ -42,6 +42,7 @@ def backtrack(路径, 选择列表):
 
 2) [滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)
 3) [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)
+4) [120. Triangle](https://leetcode-cn.com/problems/triangle/)
 
 # 3. Linklist
 [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
