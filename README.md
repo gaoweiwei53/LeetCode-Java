@@ -38,7 +38,7 @@ def backtrack(路径, 选择列表):
 [93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
 
 # 2. Dynamic Programing
-1)[5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+1) [5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
 2) [滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)
 3) [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)
