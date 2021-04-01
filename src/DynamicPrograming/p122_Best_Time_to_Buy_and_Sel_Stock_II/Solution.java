@@ -1,6 +1,22 @@
 package p122_Best_Time_to_Buy_and_Sel_Stock_II;
 
 public class Solution {
+    public int maxProfit(int[] prices) {
+        int lowPrice = prices[0];
+        int profit = 0;
+        int sum = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] <= lowPrice){
+                lowPrice = prices[i];
+            }
+            else {
+                profit = prices[i] - lowPrice;
+                sum += profit;
+                lowPrice = prices[i];
+            }
+        }
+        return sum;
+    }
 }
 /*
 * [7, 1, 5, 6] 第二天买入，第四天卖出，收益最大（6-1），所以一般人可能会想，怎么判断不是第三天就卖出了呢? 这里就把问题复杂化了，
