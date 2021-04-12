@@ -17,6 +17,8 @@
 15) [验证是否为有效的二分查找树](https://leetcode-cn.com/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/)
 16) [BFS, DFS](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/solution/bfs-de-shi-yong-chang-jing-zong-jie-ceng-xu-bian-l/)
 17) [平衡二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jian-dan-di-gui-bi-xu-miao-dong-by-sweetiee/)
+18) [Top k](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/solution/tu-jie-top-k-wen-ti-de-liang-chong-jie-fa-you-lie-/)
+19) []()
 # 1. Backtracking
 ```
 result = []
@@ -326,3 +328,6 @@ public void traverseInOrder(Node node) {
 11) [110. Balanced Binary Tree](https://leetcode-cn.com/problems/balanced-binary-tree/)
 12) [112. Path Sum](https://leetcode-cn.com/problems/path-sum/)
 13) [113. Path Sum II](https://leetcode-cn.com/problems/path-sum-ii/)
+# 排序
+1) [剑指 Offer 40. 最小的k个数  LCOF](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)
+- 使用堆结构或快速排序
