@@ -5,130 +5,64 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-
+// attention！ 该题给定的数据没有  重复的序列
 public class Solution {
 
     public static void main(String[] args) {
         int[] nums  = {1,2,3};
+        List<List<Integer>> res = new Solution().permute(nums);
 
-        System.out.println(new Solution().permute(nums));
+        System.out.println(res);
     }
-    /*
-   public List<List<Integer>> permute(int[] nums) {
-       List<List<Integer>> resultList = new ArrayList<>();
-       // Arrays.sort(nums); // not necessary
-       backtrack(resultList, new ArrayList<Integer>(), nums);
-       return resultList;
-   }
-   private void backtrack(List<List<Integer>> resultList, List<Integer> currentList, int [] nums){
-       if(currentList.size() == nums.length){
-           resultList.add(new ArrayList<>(currentList));
-       }
-       else{
 
-           for(int i = 0; i < nums.length; i++){
-               if(currentList.contains(nums[i])) continue; // element already exists, skip
-               currentList.add(nums[i]);
-               backtrack(resultList, currentList, nums);
-               currentList.remove(currentList.size() - 1);
-           }
-       }
-   }
-    */
-   // private static List<List<Integer>> res = new LinkedList<>();
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
 
-    /* 主函数，输入一组不重复的数字，返回它们的全排列 w */
-    /*
-
-    List<List<Integer>> permute(int[] nums) {
-        // 记录「路径」
-        LinkedList<Integer> track = new LinkedList<>();
-        backtrack(nums, track);
+        int[] visited = new int[nums.length];
+        backtrack(res, nums, new ArrayList<>(), visited);
         return res;
-    }
 
-    // 路径：记录在 track 中
-    // 选择列表：nums 中不存在于 track 的那些元素
-    // 结束条件：nums 中的元素全都在 track 中出现
-    void backtrack(int[] nums, LinkedList<Integer> track) {
-        // 触发结束条件
-        if (track.size() == nums.length) {
-            res.add(new LinkedList(track));
+    }
+    // 四个参数 击败96%
+    private void backtrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> tmp, int[] visited) {
+        if (tmp.size() == nums.length) {
+            res.add(new ArrayList<>(tmp));
             return;
         }
 
         for (int i = 0; i < nums.length; i++) {
-            // 排除不合法的选择
-            if (track.contains(nums[i]))
-                continue;
-            // 做选择
-            track.add(nums[i]);
-            // 进入下一层决策树
-            backtrack(nums, track);
-            // 取消选择
-            track.removeLast();
+            if (visited[i] == 1) continue;
+            visited[i] = 1;
+            tmp.add(nums[i]);
+            backtrack(res, nums, tmp, visited);
+
+            // 回溯，退出后，将当前的元素移除, 状态重置
+            visited[i] = 0;
+            tmp.remove(tmp.size() - 1);
         }
     }
 
-     */
-
-
-    // 优化：用 used 数组记录已经访问过的位置，以空间换时间
-    /*
-    时间：O(N * N!)，空间：O(N!)
-
-        public List<List<Integer>> permute(int[] nums) {
-            LinkedList<Integer> path = new LinkedList<>();
-            boolean[] used = new boolean[nums.length];
-            backTrack(path, nums, used);
-            return res;
-        }
-
-        private void backTrack(LinkedList<Integer> path, int[] nums, boolean[] used){
-            if(path.size() == nums.length){
-                res.add(new LinkedList<>(path));
-            }
-
-            for(int i = 0; i < nums.length; i++){
-                if(used[i]){
-                    continue;
-                }
-                used[i] = true;
-                path.add(nums[i]);
-                backTrack(path, nums, used);
-                used[i] = false;
-                path.removeLast();
-            }
-        }
-     */
-    public List<List<Integer>> permute(int[] nums){
-        int len = nums.length;
+    //三个参数， 击败10% 太慢了
+/*    public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        if (len == 0){
-            return res;
-        }
-        Deque<Integer> path = new ArrayDeque<>();
-        boolean[] used = new boolean[len];
-        dfs(nums, len, 0, path, used, res);
+        List<Integer> list = new ArrayList<>();
+        backtrack(res, list, nums);
         return res;
     }
-    private void dfs(int[] nums, int len, int depth, Deque<Integer> path, boolean[] used,List<List<Integer>> res){
-        // 终止的条件
-        if(depth == len){
-            // 这里很关键
-            res.add(new ArrayList<>(path));
+
+    public void backtrack(List<List<Integer>> res, List<Integer> list, int[] nums) {
+        if(list.size() == nums.length) {
+            res.add(new ArrayList<>(list));
             return;
         }
-        for (int i = 0; i < len; i++) {
-            if (used[i]){
-                continue;
+        for(int num : nums) {
+            // contains() 有重复的序列时就用不了了
+            if(!list.contains(num)) {
+                list.add(num);
+                backtrack(res, list, nums);
+                list.remove(list.size() - 1);
             }
-            path.addLast(nums[i]);
-            used[i] = true;
-            dfs(nums, len, depth + 1, path, used, res);
-            path.removeLast();
-            used[i] = false;
         }
+    }*/
 
-    }
 }

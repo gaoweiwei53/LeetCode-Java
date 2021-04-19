@@ -34,11 +34,11 @@ def backtrack(路径, 选择列表):
 ```
 * 排列问题，讲究顺序（即 [2, 2, 3] 与 [2, 3, 2] 视为不同列表时），需要记录哪些数字已经使用过，此时用 used 数组；
 * 组合问题，不讲究顺序（即 [2, 2, 3] 与 [2, 3, 2] 视为相同列表时），需要按照某种顺序搜索，此时使用 begin 变量。
-
-[89.Gray Code](https://leetcode-cn.com/problems/gray-code/)
-
-[93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
-
+1) [39. Combination Sum](https://leetcode-cn.com/problems/permutations/comments/)
+1) [46. Permutations](https://leetcode-cn.com/problems/permutations/)
+2) [47. Permutations II](https://leetcode-cn.com/problems/permutations-ii/)
+3) [89.Gray Code](https://leetcode-cn.com/problems/gray-code/)
+4) [93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
 # 2. Dynamic Programing
 1) [5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
