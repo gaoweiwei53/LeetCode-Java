@@ -56,6 +56,7 @@ public class UnionFind {
     }
 }
 class Test{
+    // hahaha
     public static void main(String[] args) {
         UnionFind unionFind = new UnionFind(7);
         int[][] edges = {{0, 1}, {1,2},{1,3},{2,4},{3,4},{6,5}};
