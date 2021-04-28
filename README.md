@@ -40,11 +40,12 @@ def backtrack(路径, 选择列表):
 3) [89.Gray Code](https://leetcode-cn.com/problems/gray-code/)
 4) [93. Restore IP Addresses](https://leetcode-cn.com/problems/restore-ip-addresses/)
 # 2. Dynamic Programing
+[经典题目](https://blog.csdn.net/flowing_wind/article/details/81949689)
 1) [5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
-
 2) [滚动数组思想](https://leetcode-cn.com/problems/unique-paths-ii/solution/bu-tong-lu-jing-ii-by-leetcode-solution-2/)
 3) [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)
 4) [120. Triangle](https://leetcode-cn.com/problems/triangle/)
+- [139. Word Break](https://leetcode-cn.com/problems/word-break/)
 
 # 3. Linklist
 [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
