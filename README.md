@@ -332,3 +332,4 @@ public void traverseInOrder(Node node) {
 # 排序
 1) [剑指 Offer 40. 最小的k个数  LCOF](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)
 - 使用堆结构或快速排序
+2) [单链表排序, 147. Insertion Sort List](https://leetcode-cn.com/problems/insertion-sort-list/)
