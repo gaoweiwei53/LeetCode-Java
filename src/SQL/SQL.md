@@ -1,11 +1,11 @@
-1) 175. Combine Two Tables
+1) 175 Combine Two Tables
     ```mysql
    select FirstName, LastName, City, State
    from Person left join Address
    on Person.PersonId = Address.PersonId;
     ```
    
-2) 176. Second Highest Salary
+2) 176 Second Highest Salary
    ```mysql
    # 思路1
    select max(Salary) SecondHighestSalary
@@ -20,6 +20,7 @@
    order by Salary Desc
    limit 1,1),null
    ) as SecondHighestSalary;
+   
    # 速度较快, 没有用ifNull
    select(
     select distinct Salary 
@@ -40,6 +41,7 @@ where 课程='语文' and
       成绩 < (select max(distinct 成绩) 
               from 成绩表 
               where 课程='语文');
+
 # 思路2
 select distinct 成绩
 from 成绩表
