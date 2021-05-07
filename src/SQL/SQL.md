@@ -67,7 +67,11 @@ limit 1,1;
       );
    END
    ```
-4) 178. Rank Scores
+4) 178 Rank Scores  
+   使用窗口函数
+   - `rank()` : 排名有间隔
+   - `dense_rank()`：无间隔
+   - `row_number()`：按照简单自然排序
    ```mysql
    # Write your MySQL query statement below
    SELECT
