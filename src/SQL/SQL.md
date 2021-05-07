@@ -49,3 +49,38 @@ where 课程='语文'
 order by 课程,成绩 desc
 limit 1,1;
 ```
+3) 177 Nth Highest Salary
+   ```mysql
+   CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+   BEGIN
+   # limit 后不能做运算代码
+      declare M int;
+      set M = N - 1;
+      RETURN (
+      # Write your MySQL query statement below.
+      select(
+         select distinct Salary
+         from Employee
+         order by Salary desc
+         limit 1 offset M
+      )  
+      );
+   END
+   ```
+4) 178. Rank Scores
+   ```mysql
+   # Write your MySQL query statement below
+   SELECT
+      Score,
+      DENSE_RANK() over w as 'Rank'
+   FROM Scores
+   WINDOW w AS (order by Score desc);
+   
+   # 或者
+   SELECT
+      Score ,
+      dense_rank() over (order by Score desc)  as 'Rank'
+   FROM Scores;
+   # 不指定 partition by 相当于所有行数据一个 partition, 数据进行区内排序
+   # dense_rank() 相当于每一行数据一个窗口, 对数据进行比较
+   ```
