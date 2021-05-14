@@ -88,3 +88,60 @@ limit 1,1;
    # 不指定 partition by 相当于所有行数据一个 partition, 数据进行区内排序
    # dense_rank() 相当于每一行数据一个窗口, 对数据进行比较
    ```
+   
+5) 180 Consecutive Numbers
+   ```mysql
+   SELECT DISTINCT Num ConsecutiveNums
+   FROM(
+      SELECT *,
+      ROW_NUMBER() OVER (PARTITION BY Num ORDER BY Id) rownum
+      FROM LOGS
+   ) t
+   GROUP BY (Id+1-rownum),Num
+   HAVING COUNT(*)>=3
+   ```
+
+6) 181 Employees Earning More Than Their Managers  
+   使用自连接
+   ```mysql
+   select 
+    e1.name as Employee
+   from
+   employee as e1,employee as e2
+   where
+   e1.managerId = e2.Id and e1.salary > e2.salary
+   ```
+7) 182. Duplicate Emails
+   ```mysql
+   #  方法1
+   select Email from
+    (select Email, count(Email) as num
+     from Person
+     group by Email
+    ) as statistic
+   where num > 1;
+   
+   # 方法为2
+   select Email
+   from Person
+   group by Email
+   having count(Email) > 1;
+
+   ```
+   
+8) 183. Customers Who Never Order
+   ```mysql
+   # 方法1
+   SELECT Name as Customers
+   FROM Customers left join Orders
+   on Customers.Id = Orders.CustomerId
+   Where CustomerId is Null;
+    
+   # 方法2
+   select customers.name as 'Customers'
+   from customers
+   where customers.id not in
+   (
+   select customerid from orders
+   );
+   ```

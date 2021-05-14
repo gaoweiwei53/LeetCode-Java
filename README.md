@@ -20,6 +20,7 @@
 18) [Top k](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/solution/tu-jie-top-k-wen-ti-de-liang-chong-jie-fa-you-lie-/)
 19) [摩尔投票法](https://leetcode-cn.com/problems/majority-element-ii/solution/liang-fu-dong-hua-yan-shi-mo-er-tou-piao-fa-zui-zh/)
 20) [自定义排序](https://leetcode-cn.com/problems/largest-number/solution/java-jiang-shu-zu-zhuan-hua-wei-zi-fu-ch-ikrv/)
+21) [SQL任意连续N问题](https://leetcode-cn.com/problems/consecutive-numbers/solution/mysql-jie-fa-tong-jie-ren-yi-lian-xu-nwe-hxg4/)
 # 1. Backtracking
 ```
 result = []
