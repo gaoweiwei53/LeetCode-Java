@@ -146,7 +146,7 @@ limit 1,1;
    );
    ```
    
-9) 184. Department Highest Salary
+9) 184. Department Highest Salary 查询部门最高的薪水
    ```mysql
    SELECT
     Department.name AS 'Department',
@@ -164,4 +164,19 @@ limit 1,1;
             Employee
          GROUP BY DepartmentId
       );
+   ```
+   
+10) 196 Delete Duplicate Emails
+   ```mysql
+    DELETE p1 
+    FROM Person p1, Person p2
+    WHERE p1.Email = p2.Email AND p1.Id > p2.Id
+   ```
+11) 197 Rising Temperature
+   ```mysql
+    SELECT
+        weather.id AS 'Id'
+    FROM Weather JOIN Weather w ON DATEDIFF(Weather.recorddate, w.recorddate) = 1
+        AND Weather.Temperature > w.Temperature
+    ;
    ```

@@ -22,6 +22,9 @@
 20) [自定义排序](https://leetcode-cn.com/problems/largest-number/solution/java-jiang-shu-zu-zhuan-hua-wei-zi-fu-ch-ikrv/)
 21) [SQL任意连续N问题](https://leetcode-cn.com/problems/consecutive-numbers/solution/mysql-jie-fa-tong-jie-ren-yi-lian-xu-nwe-hxg4/)
 22) [翻转数字](https://leetcode-cn.com/problems/reverse-bits/solution/ju-yi-fan-san-yi-wen-dai-ni-shua-san-dao-ubat/)
+23) [翻转数组](https://leetcode-cn.com/problems/rotate-array/)
+24) [详解位运算](https://leetcode-cn.com/problems/number-of-1-bits/solution/fu-xue-ming-zhu-xiang-jie-wei-yun-suan-f-ci7i/)
+25) [正则表达式](https://leetcode-cn.com/problems/valid-phone-numbers/solution/zheng-ze-biao-da-shi-zhong-xian-ding-fu-yu-ding-we/)
 # 1. Backtracking
 ```
 result = []
@@ -107,7 +110,6 @@ return false;   // change return value to fit specific problem
 2. [24. Swap Nodes in Pairs](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
 3. [92. Reverse Linked List II](https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/bu-bu-chai-jie-ru-he-di-gui-di-fan-zhuan-lian-biao/)
 # 3. Array
-## 双指针
 1) [283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/)  
 [解法](https://leetcode-cn.com/problems/move-zeroes/solution/dong-hua-yan-shi-283yi-dong-ling-by-wang_ni_ma/)
 2) [26. Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)  
@@ -119,6 +121,7 @@ return false;   // change return value to fit specific problem
    
 5) [16. 3Sum Closest](https://leetcode-cn.com/problems/3sum-closest/)
 6) [54. Spiral Matrix](https://leetcode-cn.com/problems/spiral-matrix/)
+7) [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/)
 
 # Binary Search
 二分查找一般由三个主要部分组成：
