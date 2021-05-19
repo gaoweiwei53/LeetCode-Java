@@ -9,6 +9,7 @@ class ListNode{
     }
 }
 
+// 使用插入排序的思想
 class Solution {
     public ListNode insertionSortList(ListNode head) {
         if (head == null) {
