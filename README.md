@@ -4,7 +4,6 @@
 3) [旋转图像/二位数组](https://leetcode-cn.com/problems/rotate-image/solution/ji-qiao-ti-zai-zeng-song-yi-wei-xing-shi-377z/)
 4) [快速幂](https://leetcode-cn.com/problems/powx-n/solution/50-powx-n-kuai-su-mi-qing-xi-tu-jie-by-jyd/)
     - 快速幂算法的核心思想就是每一步都把指数分成两半，而相应的底数做平方运算。
-
 5) [合并区间，贪心算法](https://leetcode-cn.com/problems/merge-intervals/solution/tan-xin-suan-fa-java-by-liweiwei1419-3/)
 6) [区间问题](https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow)
 7) [快速排序](https://leetcode-cn.com/problems/sort-colors/solution/kuai-su-pai-xu-partition-guo-cheng-she-ji-xun-huan/)
@@ -21,15 +20,11 @@
 19) [摩尔投票法](https://leetcode-cn.com/problems/majority-element-ii/solution/liang-fu-dong-hua-yan-shi-mo-er-tou-piao-fa-zui-zh/)
 20) [自定义排序](https://leetcode-cn.com/problems/largest-number/solution/java-jiang-shu-zu-zhuan-hua-wei-zi-fu-ch-ikrv/)
 21) [SQL任意连续N问题](https://leetcode-cn.com/problems/consecutive-numbers/solution/mysql-jie-fa-tong-jie-ren-yi-lian-xu-nwe-hxg4/)
-<<<<<<< Updated upstream
 22) [翻转数字](https://leetcode-cn.com/problems/reverse-bits/solution/ju-yi-fan-san-yi-wen-dai-ni-shua-san-dao-ubat/)
 23) [翻转数组](https://leetcode-cn.com/problems/rotate-array/)
 24) [详解位运算](https://leetcode-cn.com/problems/number-of-1-bits/solution/fu-xue-ming-zhu-xiang-jie-wei-yun-suan-f-ci7i/)
 25) [正则表达式](https://leetcode-cn.com/problems/valid-phone-numbers/solution/zheng-ze-biao-da-shi-zhong-xian-ding-fu-yu-ding-we/)
-=======
-22) [排序问题](https://leetcode-cn.com/problems/sort-an-array/solution/)
-
->>>>>>> Stashed changes
+26) [排序问题](https://leetcode-cn.com/problems/sort-an-array/solution/)
 # 1. Backtracking
 ```
 result = []
