@@ -21,6 +21,7 @@ class Solution {
             }
             path.add(s1);
             dfs(s,i + 1, path, list);
+            // 重要
             path.remove(path.size() - 1);
         }
     }

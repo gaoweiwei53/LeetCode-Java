@@ -125,7 +125,7 @@ public class Solution {
 
 
     // 动态规划
-    public String longestPalindrome(String s) {
+    public String longestPalindrome2(String s) {
         int len = s.length();
         if (len < 2) {
             return s;

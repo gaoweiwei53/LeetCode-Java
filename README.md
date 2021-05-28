@@ -25,6 +25,9 @@
 24) [详解位运算](https://leetcode-cn.com/problems/number-of-1-bits/solution/fu-xue-ming-zhu-xiang-jie-wei-yun-suan-f-ci7i/)
 25) [正则表达式](https://leetcode-cn.com/problems/valid-phone-numbers/solution/zheng-ze-biao-da-shi-zhong-xian-ding-fu-yu-ding-we/)
 26) [排序问题](https://leetcode-cn.com/problems/sort-an-array/solution/)
+27) [回溯法题目题解](https://leetcode-cn.com/problems/palindrome-partitioning/solution/shou-hua-tu-jie-san-chong-jie-fa-hui-su-q5zjt/)
+28) [背包问题](https://leetcode-cn.com/problems/coin-change/solution/)
+29) [买卖股票问题](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/solution/javayi-ge-si-lu-da-bao-suo-you-gu-piao-t-pd1p/)
 # 1. Backtracking
 ```
 result = []
