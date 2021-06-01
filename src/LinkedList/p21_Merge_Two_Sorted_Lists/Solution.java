@@ -29,7 +29,6 @@ public class Solution {
     // 迭代
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         ListNode prehead = new ListNode(-1);
-
         ListNode prev = prehead;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
