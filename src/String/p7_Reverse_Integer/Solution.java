@@ -14,6 +14,20 @@ class Solution {
         }
         return ans;
     }
+    // 小于2^31的10位数，首位只能是1或2，反转过来末位是1或2，小于7。如果大于7，输入就溢出了。
+    // 所以不用考虑末位的7和-8，只要保证其余9位满足条件就行。
+    public int reverse2(int x) {
+        int rev = 0;
+        while (x != 0) {
+            if (rev < Integer.MIN_VALUE / 10 || rev > Integer.MAX_VALUE / 10) {
+                return 0;
+            }
+            int digit = x % 10;
+            x /= 10;
+            rev = rev * 10 + digit;
+        }
+        return rev;
+    }
 }
 
 // 很行

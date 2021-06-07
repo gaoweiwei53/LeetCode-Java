@@ -27,6 +27,18 @@ public class Solution {
                 return true; // 先移动再判断，避免两个都在head还没移动的情况
         }
         return false; // fast == null || fast.next == null
-
+    }
+    public boolean hasCycle2 (ListNode head) {
+        if(head == null ) return false;
+        ListNode slow  = head;
+        ListNode fast = head.next;
+        while(fast != null && fast.next != null ){
+            if(fast == slow){
+                return true;
+            }
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return false;
     }
 }

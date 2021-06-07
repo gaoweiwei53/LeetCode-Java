@@ -48,6 +48,34 @@ class Solution {
         }
         return slow;
     }
+    // 将值复制到数组中再比较
+    public boolean isPalindrome2(ListNode head) {
+        ListNode p = head;
+        int n = 0;
+        while(p != null){
+            n++;
+            p = p.next;
+        }
+        int[] arr = new int[n];
+        p = head;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = p.val;
+            p = p.next;
+        }
+        return isPalindrome(arr);
+    }
+
+    private boolean isPalindrome(int[] nums){
+        int left = 0, right = nums.length - 1;
+        while(left < right){
+            if(nums[left] != nums[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
 }
 // 使用双指针
 /*

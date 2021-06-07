@@ -20,12 +20,12 @@ public class Solution {
     // 使用hash表
     public int[] twoSum2(int[] nums, int target) {
         int n = nums.length;
-        Map<Integer,Integer> map = new HashMap();
+        Map<Integer, Integer> numMap = new HashMap<>();
         for (int i = 0; i < n; i++){
-            if (map.containsKey(target - nums[i])){
-                return new int[]{map.get(target - nums[i]),i};
+            if (numMap.containsKey(target - nums[i])){
+                return new int[]{numMap.get(target - nums[i]),i};
             }
-            map.put(nums[i], i);
+            numMap.put(nums[i], i);
         }
         return new int[]{0};
     }

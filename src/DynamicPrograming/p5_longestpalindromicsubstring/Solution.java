@@ -48,7 +48,8 @@ public class Solution {
         int begin = 0;
 
         // dp[i][j] 表示 s[i...j] 是否是回文串
-        // 状态转移方程: dp[i][j] = dp[i-1][j+1] && (s[i] == s[j])
+        // 状态转移方程: dp[i][j] = dp[i+1][j-1] && (s[i] == s[j])
+        // dp[i+1][j-1]表示的除去两边字符的子串情况
         // 边界条件：j - 1 - (i+1) + 1 < 2, 整理的 j - i < 3, 状态转移方程建立在子串长度大于2的前提下
         // 默认为false
         boolean[][] dp = new boolean[len][len];
@@ -56,7 +57,6 @@ public class Solution {
             dp[i][i] = true;
         }
         char[] charArray = s.toCharArray();
-        // 注意：左下角先填
         for (int j = 1; j < len; j++) {
             // i < j 表示只填对角线上半部分的值
             for (int i = 0; i < j; i++) {
@@ -125,6 +125,7 @@ public class Solution {
 
 
     // 动态规划
+    // 枚举子串长度
     public String longestPalindrome2(String s) {
         int len = s.length();
         if (len < 2) {
