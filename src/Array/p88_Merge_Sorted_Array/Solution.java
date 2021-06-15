@@ -2,16 +2,6 @@ package p88_Merge_Sorted_Array;
 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        // 从前面开始遍历不可行，因为添加数据时要后移其后面的元素
-/*        for(int i = 0; i < n; i++){
-            for(int j = 1; j < m; j++){
-                if(nums2[i] < nums1[j] && nums2[i] >= nums1[i-1]){
-
-
-                }
-            }
-        }*/
-
 
         // two get pointers for nums1 and nums2
         int p1 = m - 1;
@@ -29,6 +19,46 @@ class Solution {
 
         // add missing elements from nums2
         System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
+    }
+    // 代码不容易写
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
+        // m > n
+        // m > n
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int p = nums1.length - 1;
+        while(p2 >= 0){
+            if(p1 == -1 || nums2[p2] >= nums1[p1]){
+                nums1[p]  = nums2[p2];
+                p--;
+                p2--;
+            } else {
+                nums1[p] = nums1[p1];
+                p--;
+                p1--;
+            }
+        }
+    }
+
+    // 完美的解法
+    public void merge3(int[] nums1, int m, int[] nums2, int n) {
+        // m > n
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int p = nums1.length - 1;
+        while(p1 >= 0 || p2 >=0){
+            if(p1 == -1){
+                nums1[p--] = nums2[p2--];
+            } else if(p2 == -1){
+                nums1[p--] = nums1[p1--];
+            }
+            else if(nums1[p1] >= nums2[p2]){
+                nums1[p--] = nums1[p1--];
+            }
+            else{
+                nums1[p--] = nums2[p2--];
+            }
+        }
     }
 
     public static void main(String[] args) {

@@ -64,5 +64,24 @@ public class Solution {
             }
         }
     }*/
+    public List<List<Integer>> permute3(int[] nums) {
+
+        List<List<Integer>> res = new ArrayList<>();
+        dfs3(nums, new ArrayList<Integer>(), res, 0);
+        return res;
+    }
+
+    private void dfs3(int[] nums, ArrayList<Integer> path, List<List<Integer>> res, int resLen){
+        if(resLen == nums.length  ){
+            res.add(new ArrayList(path));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if(path.contains(nums[i])) continue;
+            path.add(nums[i]);
+            dfs3(nums, path, res, resLen + 1);
+            path.remove(path.size()-1);
+        }
+    }
 
 }
