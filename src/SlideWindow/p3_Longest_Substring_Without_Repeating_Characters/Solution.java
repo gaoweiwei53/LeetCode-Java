@@ -25,13 +25,13 @@ class Solution {
     }
 
     public static void main(String[] args) {
-//        int ans = new Solution().lengthOfLongestSubstring("abcabcbb");
-//        System.out.println(ans);
+        int ans = new Solution().lengthOfLongestSubstring("abcabcbb");
+        System.out.println(ans);
 
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('a', 0);
-        map.put('b', 1);
-        map.put('a', 2);
-        System.out.println(Arrays.asList(map));
+//        Map<Character, Integer> map = new HashMap<>();
+//        map.put('a', 0);
+//        map.put('b', 1);
+//        map.put('a', 2);
+//        System.out.println(Arrays.asList(map));
     }
 }

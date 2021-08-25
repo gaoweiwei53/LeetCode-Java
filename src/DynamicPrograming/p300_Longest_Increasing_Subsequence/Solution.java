@@ -68,4 +68,10 @@ public class Solution {
         end++;
         return end;
     }
+
+    public static void main(String[] args) {
+        int[] input = new int[]{2,1,5,3,6,4,8,9,7};
+        int res = new Solution().lengthOfLIS(input);
+        System.out.println(res);
+    }
 }

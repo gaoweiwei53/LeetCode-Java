@@ -15,44 +15,10 @@ public class Solution {
             this.right = right;
         }
     }
-
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        // 使用双端队列，比较慢，使用逆序试试？
-        List<List<Integer>> ans = new LinkedList<List<Integer>>();
-        if (root == null) {
-            return ans;
-        }
-
-        Queue<TreeNode> nodeQueue = new LinkedList<>();
-        nodeQueue.offer(root);
-        boolean isOrderLeft = true;
-
-        while (!nodeQueue.isEmpty()) {
-            Deque<Integer> levelList = new LinkedList<Integer>();
-            int size = nodeQueue.size();
-            for (int i = 0; i < size; ++i) {
-                // 取
-                TreeNode curNode = nodeQueue.poll();
-                if (isOrderLeft) {
-                    levelList.offerLast(curNode.val);
-                } else {
-                    levelList.offerFirst(curNode.val);
-                }
-                if (curNode.left != null) {
-                    nodeQueue.offer(curNode.left);
-                }
-                if (curNode.right != null) {
-                    nodeQueue.offer(curNode.right);
-                }
-            }
-            ans.add(new LinkedList<>(levelList));
-            isOrderLeft = !isOrderLeft;
-        }
-
-        return ans;
-
+    // 建议使用
+    public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
         // 速度很快
-/*        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         List<List<Integer>> res = new ArrayList<>();
         if (root != null) {
             queue.offer(root);
@@ -76,7 +42,47 @@ public class Solution {
             }
             res.add(list);
         }
-        return res;*/
+        return res;
+    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        // 使用双端队列，比较慢，使用逆序试试？
+        List<List<Integer>> ans = new LinkedList<List<Integer>>();
+        if (root == null) {
+            return ans;
+        }
+
+        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        nodeQueue.offer(root);
+        boolean isOrderLeft = true;
+
+        while (!nodeQueue.isEmpty()) {
+            Deque<Integer> levelList = new LinkedList<>();
+            int size = nodeQueue.size();
+            for (int i = 0; i < size; ++i) {
+                // 取
+                TreeNode curNode = nodeQueue.poll();
+                if (isOrderLeft) {
+                    levelList.offerLast(curNode.val);
+                } else {
+                    levelList.offerFirst(curNode.val);
+                }
+                if (curNode.left != null) {
+                    nodeQueue.offer(curNode.left);
+                }
+                if (curNode.right != null) {
+                    nodeQueue.offer(curNode.right);
+                }
+            }
+            ans.add(new LinkedList<>(levelList));
+            isOrderLeft = !isOrderLeft;
+        }
+
+        return ans;
+    }
+
+
+
 
 /*        List<List<Integer>> res = new ArrayList<>();
 
@@ -117,5 +123,5 @@ public class Solution {
         }
 
         return res;*/
-    }
+
 }

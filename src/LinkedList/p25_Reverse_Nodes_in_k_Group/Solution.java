@@ -12,10 +12,11 @@ public class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
+        // pre 代表待翻转链表的前驱，end 代表待翻转链表的末尾
         ListNode pre = dummy;
         ListNode end = dummy;
 
-        while (end.next != null) {
+        while (end != null) {
             // 每次遍历到该组的最后一个节点
             for (int i = 0; i < k && end != null; i++)
                 end = end.next;
@@ -25,13 +26,15 @@ public class Solution {
             ListNode start = pre.next;
             // next指向下一组的第一个节点
             ListNode next = end.next;
+
+            // 需要将当前组的末尾指向null
             end.next = null;
             pre.next = reverse(start);
             // 反转之后start指向的是当前组的最后一个节点
             start.next = next;
-            pre = start;
             // 最后将pre指向当前组的最后一个节点
-            end = pre;
+            pre = start;
+            end = start;
         }
         return dummy.next;
     }

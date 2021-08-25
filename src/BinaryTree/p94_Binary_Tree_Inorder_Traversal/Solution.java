@@ -21,11 +21,6 @@ public class Solution {
       }
 
     public List<Integer> inorderTraversal(TreeNode root) {
-          // 递归
-/*        List<Integer> res = new ArrayList<Integer>();
-        inorder(root, res);
-        return res;*/
-
         // 迭代
         List<Integer> res = new ArrayList<>();
         Deque<TreeNode> stk = new LinkedList<>();
@@ -41,29 +36,14 @@ public class Solution {
             root = root.right;
         }
         return res;
+    }
 
-/*        List<Integer> res = new ArrayList<Integer>();
-        TreeNode pre = null;
-        while(root!=null) {
-            //如果左节点不为空，就将当前节点连带右子树全部挂到
-            //左节点的最右子树下面
-            if(root.left!=null) {
-                pre = root.left;
-                while(pre.right!=null) {
-                    pre = pre.right;
-                }
-                pre.right = root;
-                //将root指向root的left
-                TreeNode tmp = root;
-                root = root.left;
-                tmp.left = null;
-                //左子树为空，则打印这个节点，并向右边遍历
-            } else {
-                res.add(root.val);
-                root = root.right;
-            }
-        }
-        return res;*/
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        // 递归
+        List<Integer> res = new ArrayList<>();
+        inorder(root, res);
+        return res;
+
     }
 
     public void inorder(TreeNode root, List<Integer> res) {

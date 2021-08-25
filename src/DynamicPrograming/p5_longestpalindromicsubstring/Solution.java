@@ -1,5 +1,7 @@
 package p5_longestpalindromicsubstring;
 
+import java.util.Scanner;
+
 public class Solution {
     // 暴力解法
     /*
@@ -37,10 +39,10 @@ public class Solution {
         System.out.println(longestPalindromic);
 
     }
-
      */
+
+
     // Dynamic Programing
-    //执行用时：189 ms, 在所有 Java 提交中击败了14.11%的用户
     public String longestPalindrome(String s){
         int len = s.length();
         if (len < 2) return s;
@@ -79,6 +81,9 @@ public class Solution {
 
     }
     // 中心扩散法
+    // 分为两种情况：
+    // 1. 中心字符与相邻两边不相等
+    // 2. 中心字符与相邻两边相等，此时要把所有相等的字符串作为中心
     public String longestPalindrome1(String s) {
 
         if (s == null || s.length() == 0) {
@@ -119,60 +124,12 @@ public class Solution {
         }
         return s.substring(maxStart + 1, maxStart + maxLen + 1);
     }
-    // 分为两种情况：
-    // 1. 中心字符与相邻两边不相等
-    // 2. 中心字符与相邻两边相等，此时要把所有相等的字符串作为中心
 
-
-    // 动态规划
-    // 枚举子串长度
-    public String longestPalindrome2(String s) {
-        int len = s.length();
-        if (len < 2) {
-            return s;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String res = new Solution().longestPalindrome1(scanner.next());
+            System.out.println(res);
         }
-        int maxLen = 1;
-        int begin = 0;
-        // dp[i][j] 表示 s[i..j] 是否是回文串
-        boolean[][] dp = new boolean[len][len];
-        // 初始化：所有长度为 1 的子串都是回文串
-        for (int i = 0; i < len; i++) {
-            dp[i][i] = true;
-        }
-
-        char[] charArray = s.toCharArray();
-        // 递推开始
-        // 先枚举子串长度
-        for (int L = 2; L <= len; L++) {
-            // 枚举左边界，左边界的上限设置可以宽松一些
-            for (int i = 0; i < len; i++) {
-                // 由 L 和 i 可以确定右边界，即 j - i + 1 = L 得
-
-                // 右边界
-                int j = L + i - 1;
-                // 如果右边界越界，就可以退出当前循环
-                if (j >= len) {
-                    break;
-                }
-
-                if (charArray[i] != charArray[j]) {
-                    dp[i][j] = false;
-                } else {
-                    if (j - i < 3) {
-                        dp[i][j] = true;
-                    } else {
-                        dp[i][j] = dp[i + 1][j - 1];
-                    }
-                }
-
-                // 只要 dp[i][L] == true 成立，就表示子串 s[i..L] 是回文，此时记录回文长度和起始位置
-                if (dp[i][j] && j - i + 1 > maxLen) {
-                    maxLen = j - i + 1;
-                    begin = i;
-                }
-            }
-        }
-        return s.substring(begin, begin + maxLen);
     }
-
 }

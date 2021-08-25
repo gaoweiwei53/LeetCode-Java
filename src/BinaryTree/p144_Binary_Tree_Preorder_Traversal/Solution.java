@@ -17,7 +17,7 @@ import java.util.*;
       }
   }
 
-class Solution {
+class  Solution {
 /*    List<Integer> res = new LinkedList<>();
     public List<Integer> preorderTraversal(TreeNode root) {
         if (root == null) return res;
@@ -46,5 +46,22 @@ class Solution {
             }
         }
         return res;
+    }
+}
+
+class Solution2 {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        preorder(root, res);
+        return res;
+    }
+
+    public void preorder(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        res.add(root.val);
+        preorder(root.left, res);
+        preorder(root.right, res);
     }
 }

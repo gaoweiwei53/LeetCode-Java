@@ -37,7 +37,7 @@ public class Solution {
         return pA;
     }
 
-    // 我的写法
+    // 我的写法 垃圾
     public ListNode getIntersectionNode3(ListNode headA, ListNode headB) {
         ListNode a = headA;
         ListNode b = headB;

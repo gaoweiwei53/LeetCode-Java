@@ -43,8 +43,8 @@ class Solution {
     }*/
 
     // 效果不错
-/*    Map<Integer, Integer> inorderMap;
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
+    Map<Integer, Integer> inorderMap;
+    public TreeNode buildTree2(int[] preorder, int[] inorder) {
         inorderMap = new HashMap<>();
         for(int i = 0; i < inorder.length; i++) {
             inorderMap.put(inorder[i], i);
@@ -63,7 +63,7 @@ class Solution {
         root.right = buildTree(preorder, rootIdx+i-start+1, i+1, end);
 
         return root;
-    }*/
+    }
 
     // 使用Hash表
     private Map<Integer, Integer> indexMap;

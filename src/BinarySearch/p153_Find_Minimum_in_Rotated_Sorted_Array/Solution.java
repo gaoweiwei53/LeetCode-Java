@@ -11,6 +11,7 @@ class Solution {
                 right = middle;
             } else {
                 // middle肯定不是最小值
+                // 最小值一定在middle的右边
                 left = middle + 1;
             }
         }

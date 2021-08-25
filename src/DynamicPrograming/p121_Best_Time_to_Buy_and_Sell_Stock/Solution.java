@@ -2,16 +2,15 @@ package p121_Best_Time_to_Buy_and_Sell_Stock;
 
 public class Solution {
     public int maxProfit(int prices[]) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minprice) {
-                minprice = prices[i];
-            } else if (prices[i] - minprice > maxprofit) {
-                maxprofit = prices[i] - minprice;
+        int minPrice = prices[0];
+        int max = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if(prices[i] < minPrice){
+                minPrice = prices[i];
             }
+            max = Math.max(max, prices[i] - minPrice);
         }
-        return maxprofit;
+        return max;
     }
     public int maxProfit2(int[] prices) {
         int len = prices.length;
@@ -45,6 +44,8 @@ public class Solution {
         return dp[prices.length-1];
 
     }
+
+
     // 动态规划通用
     public int maxProfit4(int[] prices) {
         int len = prices.length;

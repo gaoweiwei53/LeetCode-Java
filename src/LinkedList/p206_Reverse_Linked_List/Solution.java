@@ -10,17 +10,6 @@ public class Solution {
         }
     }
     public ListNode reverseList(ListNode head) {
-//        // 双指针解法
-//        ListNode prev = null;
-//        ListNode curr = head;
-//        while (curr != null) {
-//            ListNode next = curr.next;
-//            curr.next = prev;
-//            prev = curr;
-//            curr = next;
-//        }
-//        return prev;
-
         // 递归
         if (head == null || head.next == null) {
             // 若是最后一个节点，则返回本身
@@ -33,4 +22,16 @@ public class Solution {
         return p;
     }
 
+    public ListNode reverseList2(ListNode head) {
+//        // 双指针解法
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+        }
 }

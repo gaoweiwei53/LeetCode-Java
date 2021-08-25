@@ -12,31 +12,6 @@ class Solution {
           ListNode(int x) { val = x; }
       }
     public ListNode reverseBetween(ListNode head, int m, int n) {
-//        if(head == null) {
-//            return head;
-//        }
-//        List<Integer> list = new ArrayList<>();
-//        ListNode cur = head;
-//        while (cur != null) {
-//            list.add(cur.val); //所有元素放入集合
-//            cur = cur.next;
-//        }
-//        int i = m - 1; //注意索引要减一，因为集合从0开始
-//        int j = n - 1;
-//        while (i < j) { //交换m到n的元素
-//            int temp = list.get(i);
-//            list.set(i, list.get(j));
-//            list.set(j, temp);
-//            i++;
-//            j--;
-//        }
-//        ListNode dumy = new ListNode(0);
-//        ListNode res = dumy;
-//        for (int k = 0; k < list.size(); k++) {
-//            dumy.next = new ListNode(list.get(k)); //重新串节点
-//            dumy = dumy.next;
-//        }
-//        return res.next;
         // 递归
         // base case
         if (m == 1) {
@@ -63,6 +38,9 @@ class Solution {
         head.next = successor;
         return last;
     }
+
+
+
     // 头插法
     public ListNode reverseBetween2(ListNode head, int left, int right) {
         // 设置 dummyNode 是这一类问题的一般做法
@@ -81,5 +59,31 @@ class Solution {
             pre.next = next;
         }
         return dummyNode.next;
+    }
+    // 头插法
+    public ListNode reverseBetween3(ListNode head, int m, int n) {
+        // 定义一个dummyHead, 方便处理
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+
+        // 初始化指针
+        ListNode g = dummyHead;
+        ListNode p = dummyHead.next;
+
+        // 将指针移到相应的位置
+        for(int step = 0; step < m - 1; step++) {
+            g = g.next; p = p.next;
+        }
+
+        // 头插法插入节点
+        for (int i = 0; i < n - m; i++) {
+            ListNode removed = p.next;
+            p.next = p.next.next;
+
+            removed.next = g.next;
+            g.next = removed;
+        }
+
+        return dummyHead.next;
     }
 }

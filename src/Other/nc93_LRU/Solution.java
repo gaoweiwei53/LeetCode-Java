@@ -2,6 +2,7 @@ package nc93_LRU;
 
 import java.util.*;
 
+// 方法1: 使用Map集合
 public class Solution {
     private Map<Integer, Node> map = new HashMap<>();
     private Node head = new Node(-1,-1);
@@ -66,6 +67,8 @@ public class Solution {
         }
     }
 }
+
+// 方法2: 和方法1没什么区别
 class Solution2 {
     int k;
     int size;

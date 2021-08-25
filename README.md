@@ -28,6 +28,7 @@
 27) [回溯法题目题解](https://leetcode-cn.com/problems/palindrome-partitioning/solution/shou-hua-tu-jie-san-chong-jie-fa-hui-su-q5zjt/)
 28) [背包问题](https://leetcode-cn.com/problems/coin-change/solution/)
 29) [买卖股票问题](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/solution/javayi-ge-si-lu-da-bao-suo-you-gu-piao-t-pd1p/)
+30) [二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/236-er-cha-shu-de-zui-jin-gong-gong-zu-xian-hou-xu/)
 # 1. Backtracking
 ```
 result = []

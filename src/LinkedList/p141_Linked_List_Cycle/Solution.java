@@ -28,17 +28,4 @@ public class Solution {
         }
         return false; // fast == null || fast.next == null
     }
-    public boolean hasCycle2 (ListNode head) {
-        if(head == null ) return false;
-        ListNode slow  = head;
-        ListNode fast = head.next;
-        while(fast != null && fast.next != null ){
-            if(fast == slow){
-                return true;
-            }
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-        return false;
-    }
 }

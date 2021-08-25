@@ -9,10 +9,12 @@ import java.util.Queue;
   另一种解法使用类似快速排序的分治法。
 */
 public class Solution {
-    public int[] getLeastNumbers(int[] arr, int k) {
 
-        // 堆/优先队列
-/*        if (k == 0) {
+    // 优先队列
+    public int[] getLeastNumbers1(int[] arr, int k) {
+
+        // 堆/优先队列1.
+        if (k == 0) {
             return new int[0];
         }
 
@@ -36,9 +38,11 @@ public class Solution {
         for (int e : heap) {
             res[j++] = e;
         }
-        return res;*/
+        return res;
+    }
 
-
+    // 快速排序
+    public int[] getLeastNumbers2(int[] arr, int k) {
 
         if (k == 0) {
             return new int[0];
@@ -108,7 +112,36 @@ public class Solution {
     }
 
 }
+class Solution2 {
+    public int[] getLeastNumbers(int[] arr, int k) {
+        if(k == 0) return new int[0];
+        return quickSearch(arr, 0, arr.length - 1, k - 1);
+    }
+    private int[] quickSearch(int[] arr, int low, int high, int k){
+        int mid = partition(arr, low , high);
+        if(mid == k){
+            return Arrays.copyOf(arr, mid + 1);
+        }
+        if(mid > k){
+            return quickSearch(arr, low, mid - 1, k);
+        } else{
+            return quickSearch(arr, mid + 1, high, k);
+        }
+    }
 
+    private int partition(int[] arr, int low, int high){
+        int pivot = arr[low];
+        while(low < high){
+            while(low < high && arr[high] > pivot) high--;
+            arr[low] = arr[high];
+            while(low < high && arr[low] <= pivot) low++;
+            arr[high] = arr[low];
+        }
+        arr[low] = pivot;
+        return low;
+    }
+
+}
 /*
 * 使用堆的思路
 * 1. 使用优先队列PriorityQueue结构，让其为大堆，参数(k, ((i1,i2)->Integer.compare(i2, i1))
