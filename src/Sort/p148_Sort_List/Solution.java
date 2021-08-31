@@ -15,11 +15,12 @@ class ListNode {
   }
 
 public class Solution {
-    // 自底向上的归并排序
+    // 自底向上的归并排序 空间复杂度为 O(1)
     public ListNode sortList(ListNode head) {
         if (head == null) {
             return head;
         }
+        // 确定链表长度
         int length = 0;
         ListNode node = head;
         while (node != null) {
@@ -27,15 +28,22 @@ public class Solution {
             node = node.next;
         }
         ListNode dummyHead = new ListNode(0, head);
+        // subLength 表示每次需要排序的子链表的长度
+        // 每次将链表拆分成若干个长度为subLength 的子链表
         for (int subLength = 1; subLength < length; subLength <<= 1) {
             ListNode prev = dummyHead, curr = dummyHead.next;
+            // curr用于记录拆分链表的位置
             while (curr != null) {
+                // 第一个链表的头 即 curr初始的位置
                 ListNode head1 = curr;
                 for (int i = 1; i < subLength && curr.next != null; i++) {
                     curr = curr.next;
                 }
+                // 第二个链表的头  即 链表1尾部的下一个位置
                 ListNode head2 = curr.next;
+                // 断开第一个链表和第二个链表的链接
                 curr.next = null;
+                // 第二个链表头 重新赋值给curr
                 curr = head2;
                 for (int i = 1; i < subLength && curr != null && curr.next != null; i++) {
                     curr = curr.next;
@@ -77,7 +85,7 @@ public class Solution {
         return dummyHead.next;
     }
 
-    // 自上向底的归并排序
+    // 自上向底的归并排序 递归，空间复杂度为O(log n)
     public ListNode sortList2(ListNode head) {
         return sortList(head, null);
     }
@@ -90,6 +98,7 @@ public class Solution {
             head.next = null;
             return head;
         }
+        // 1. 找到链表的中心节点
         ListNode slow = head, fast = head;
         while (fast != tail) {
             slow = slow.next;
@@ -99,8 +108,10 @@ public class Solution {
             }
         }
         ListNode mid = slow;
+        // 2. 递归调用排序
         ListNode list1 = sortList(head, mid);
         ListNode list2 = sortList(mid, tail);
+        // 3. 合并链表
         ListNode sorted = merge(list1, list2);
         return sorted;
     }

@@ -29,5 +29,22 @@ class Solution {
             System.out.println(Arrays.toString(re));
         }
     }
+
+    public int[][] merge2(int[][] intervals) {
+        Arrays.sort(intervals, (v1, v2) -> v1[0] - v2[0]);
+
+        int[][] res= new int[intervals.length][2];
+        int index = 0;
+        for(int[] interval : intervals){
+            if(index == 0 || interval[0] > res[index - 1][1]){
+                res[index] = interval;
+                index++;
+            } else {
+                res[index - 1][1] = Math.max(res[index - 1][1], interval[1]);
+            }
+        }
+        return Arrays.copyOf(res, index);
+
+    }
 }
 

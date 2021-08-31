@@ -18,7 +18,7 @@ class TreeNode {
   }
 class Solution {
     // 深度优先遍历
-/*    public int sumNumbers(TreeNode root) {
+    public int sumNumbers(TreeNode root) {
         return dfs(root, 0);
     }
     public int dfs(TreeNode root, int prevSum) {
@@ -33,11 +33,11 @@ class Solution {
         }
 
 
-    }*/
-    // 广度优先遍历
+    }
 
+    // 广度优先遍历
     // 需要维护两个队列，分别存储节点和 节点到根节点对应的数字。
-    public int sumNumbers(TreeNode root) {
+    public int sumNumbers2(TreeNode root) {
         if (root == null) {
             return 0;
         }
