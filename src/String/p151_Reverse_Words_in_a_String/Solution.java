@@ -109,6 +109,64 @@ class Solution {
 
         return String.join(" ", d);
     }
+    // 1 ms 击败 100%
+    public String reverseWords4(String s) {
+        char[] str = s.toCharArray();
+        char[] arr = new char[str.length+1];
+        int left = str.length-1;
+        int right = str.length-1;
+        int index = 0;
+        while(true){
+            while(right >= 0 && str[right]==' '){
+                right--;
+            }
+            left = right;
+            while(left >= 0 && str[left] != ' '){
+                left--;
+            }
+            for(int i = left + 1;i <= right; i++){
+                arr[index++] = str[i];
+                if(i == right){
+                    arr[index++] = ' ';
+                }
+            }
+            right = left;
+            if(right < 0){break;}
+        }
+        return (new String(arr)).substring(0,index-1);
+    }
+
+    public static void main(String[] args) {
+        String s = "  hello world  ";
+        new Solution().reverseWords4(s);
+
+    }
 
 }
-
+// 自己写的 较慢 9ms
+class Solution2 {
+    public String reverseWords(String s) {
+        s = s.trim();
+        String[] strs = s.split("\\s+");
+        reverse(strs);
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < strs.length; i++){
+            if(i == strs.length - 1){
+                sb.append(strs[i]);
+            } else{
+                sb.append(strs[i] + " ");
+            }
+        }
+        return sb.toString();
+    }
+    private void reverse(String[] strs){
+        int l = 0, r = strs.length - 1;
+        while( l < r){
+            String tmp = strs[l];
+            strs[l] = strs[r];
+            strs[r] = tmp;
+            l++;
+            r--;
+        }
+    }
+}

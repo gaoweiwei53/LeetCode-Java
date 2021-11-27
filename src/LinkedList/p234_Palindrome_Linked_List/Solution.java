@@ -48,7 +48,7 @@ class Solution {
         }
         return slow;
     }
-    // 将值复制到数组中再比较
+    // 方法2: 将值复制到数组中再比较
     public boolean isPalindrome2(ListNode head) {
         ListNode p = head;
         int n = 0;
@@ -76,35 +76,31 @@ class Solution {
         }
         return true;
     }
-}
-// 使用双指针
-/*
-class Solution {
-public:
-    bool isPalindrome(ListNode* head) {
-        if(!head || !head->next)
-            return 1;
-        ListNode *fast = head, *slow = head;
-        ListNode *p, *pre = NULL;
-        while(fast && fast->next){
-            p = slow;
-            slow = slow->next;    //快慢遍历
-            fast = fast->next->next;
-
-            p->next = pre;  //翻转
-            pre = p;
+    // 方法3: 快慢指针寻找中点，同时让前半部分反转，最后比较
+    public boolean isPalindrome3(ListNode head) {
+        if(head == null || head.next == null) {
+            return true;
         }
-        if(fast)  //奇数个节点时跳过中间节点
-            slow = slow->next;
-
-        while(p){       //前半部分和后半部分比较
-            if(p->val != slow->val)
-                return 0;
-            p = p->next;
-            slow = slow->next;
+        ListNode slow = head, fast = head;
+        ListNode pre = head, prepre = null;
+        while(fast != null && fast.next != null) {
+            pre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+            pre.next = prepre;
+            prepre = pre;
         }
-        return 1;
+        if(fast != null) {
+            slow = slow.next;
+        }
+        while(pre != null && slow != null) {
+            if(pre.val != slow.val) {
+                return false;
+            }
+            pre = pre.next;
+            slow = slow.next;
+        }
+        return true;
     }
-};
 
- */
+}

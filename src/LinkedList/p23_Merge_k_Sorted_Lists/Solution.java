@@ -43,16 +43,17 @@ class Solution2 {
         if (lists == null || lists.length == 0) return null;
 
         // 小顶堆
-        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                // 升序
-                return o1.val - o2.val;
-//                if (o1.val < o2.val) return -1;
-//                else if (o1.val == o2.val) return 0;
-//                else return 1;
-            }
-        });
+//        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
+//            @Override
+//            public int compare(ListNode o1, ListNode o2) {
+//                // 升序
+//                return o1.val - o2.val;
+////                if (o1.val < o2.val) return -1;
+////                else if (o1.val == o2.val) return 0;
+////                else return 1;
+//            }
+//        });
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(((o1, o2) -> o1.val - o2.val));
         ListNode dummy = new ListNode(0);
         ListNode p = dummy;
 

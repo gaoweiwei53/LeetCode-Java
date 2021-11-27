@@ -18,6 +18,7 @@ public class Solution {
         }
         return cand_num;
     }
+    
     public int majorityElement2(int[] nums) {
         int ret = 0;
         int counter = 0;

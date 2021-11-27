@@ -14,21 +14,9 @@ public class Solution {
         }
     }
 
-    // recursion
+    // 递归写法  优先用这个
     public ListNode swapPairs(ListNode head) {
-//        ListNode second, lasted;
-//        second = head.next;
-//        lasted = head.next.next;
-//        if (second == null)
-//            return head;
-//        else if (lasted == null){
-//            second.next = head;
-//            head.next = null;
-//            return second;
-//        } else {
-//            head.next= swapPairs(lasted);
-//            return second;
-//        }
+
         if (head == null || head.next == null) {
             return head;
         }
@@ -38,19 +26,20 @@ public class Solution {
         return newHead;
     }
 
-    // iteration
+    // 迭代写法
     public ListNode swapPairs2(ListNode head){
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;
-        ListNode temp = dummyHead;
-        while (temp.next != null && temp.next.next != null) {
-            ListNode node1 = temp.next;
-            ListNode node2 = temp.next.next;
-            temp.next = node2;
+        ListNode prev = dummyHead;
+        while (prev.next != null && prev.next.next != null) {
+            ListNode node1 = prev.next;
+            ListNode node2 = prev.next.next;
+            prev.next = node2;
             node1.next = node2.next;
             node2.next = node1;
-            temp = node1;
+            prev = node1;
         }
         return dummyHead.next;
     }
+
 }

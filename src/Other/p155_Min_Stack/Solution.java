@@ -94,3 +94,51 @@ class MinStack2 {
         return node.min;
     }
 }
+class MinStack3 {
+    Deque<Integer> mainStack;
+    Deque<Integer> minStack;
+
+    /** initialize your data structure here. */
+    public MinStack3() {
+        mainStack = new LinkedList<>();
+        minStack = new LinkedList<>();
+
+    }
+
+    public void push(int val) {
+        mainStack.push(val);
+        if(minStack.isEmpty() || minStack.peek() >= val){
+            minStack.push(val);
+        }
+    }
+
+    public void pop() {
+        if(mainStack.peek().equals(minStack.peek())){
+            minStack.pop();
+        }
+        mainStack.pop();
+    }
+
+    public int top() {
+        return mainStack.peek();
+    }
+
+    public int getMin() {
+        return minStack.peek();
+    }
+
+    public static void main(String[] args) {
+        MinStack3 min = new MinStack3();
+        min.push(512);
+        min.push(-1024);
+        min.push(-1024);
+        min.push(512);
+        min.pop();
+        min.getMin();
+        min.pop();
+        min.getMin();
+        min.pop();
+        System.out.println(min.getMin());
+
+    }
+}

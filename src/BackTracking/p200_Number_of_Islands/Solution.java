@@ -3,7 +3,7 @@ package p200_Number_of_Islands;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
+// 遇到1，进行dfs
 // DFS
 public class Solution {
     public int numIslands(char[][] grid) {

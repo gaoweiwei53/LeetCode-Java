@@ -25,31 +25,4 @@ public class Solution {
                 || hasPathSum(root.right, targetSum - root.val);
 
     }
-
-
-
-
-    public boolean hasPathSum2(TreeNode root, int targetSum) {
-
-        int sum = 0;
-        return dfs(root,targetSum,sum);
-
-    }
-
-    private boolean dfs(TreeNode root, int targetSum, int sum) {
-          if (root==null) return false;
-          sum += root.val;
-          if (root.left == null && root.right == null){
-              if (sum == targetSum)
-                  return true;
-              else
-                  return false;
-          }
-          else if (root.left == null)
-              return dfs(root.right, targetSum, sum);
-          else if (root.right == null)
-              return dfs(root.left, targetSum, sum);
-          else
-              return dfs(root.left, targetSum, sum) || dfs(root.right, targetSum, sum);
-    }
 }

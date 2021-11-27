@@ -18,14 +18,14 @@ public class Solution {
     private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int start) {
         //走过的所有路径都是子集的一部分，所以都要加入到集合中
         list.add(new ArrayList<>(tempList));
+        System.out.println(list.toString());
         for (int i = start; i < nums.length; i++) {
             tempList.add(nums[i]);
             backtrack(list, tempList, nums, i + 1);
             tempList.remove(tempList.size() - 1);
         }
     }
-    /*
-    public static List<List<Integer>> subsets(int[] nums) {
+    public static List<List<Integer>> subsets2(int[] nums) {
         //子集的长度是2的nums.length次方，这里通过移位计算
         int length = 1 << nums.length;
         List<List<Integer>> res = new ArrayList<>(length);
@@ -42,5 +42,4 @@ public class Solution {
         }
         return res;
     }
-    */
 }

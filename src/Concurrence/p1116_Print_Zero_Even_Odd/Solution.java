@@ -20,9 +20,11 @@ public class Solution {
 
     public void zero(IntConsumer printNumber) throws InterruptedException {
         for (int i = 1; i <= n; i++) {
+            // acquire()减少一个permit
             zeroSema.acquire();
             printNumber.accept(0);
             if ((i & 1) == 1) {//奇数
+                // release()增加一个permit
                 oddSema.release();
             } else {
                 evenSema.release();
@@ -48,6 +50,30 @@ public class Solution {
                 zeroSema.release();
             }
         }
+    }
+    public static void main(String[] args) {
+        Solution zeroEvenOdd = new Solution(6);
+        new Thread(() -> {
+            try {
+                zeroEvenOdd.zero(System.out::print);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                zeroEvenOdd.even(System.out::print);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        new Thread(() -> {
+            try {
+                zeroEvenOdd.odd(System.out::print);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }
 // CountDownLatch
@@ -101,12 +127,13 @@ class Solution2{
 class Solution3{
     private int n;
 
-    private volatile int curValue = 0;
+    private volatile int start = 1;
 
-    private Lock l = new ReentrantLock();
-    private Condition z = l.newCondition();
-    private Condition o = l.newCondition();
-    private Condition e = l.newCondition();
+    private volatile int state;
+    private Lock lock = new ReentrantLock();
+    private Condition zero = lock.newCondition();
+    private Condition even = lock.newCondition();
+    private Condition odd = lock.newCondition();
 
     public Solution3(int n) {
         this.n = n;
@@ -114,60 +141,63 @@ class Solution3{
 
     // printNumber.accept(x) outputs "x", where x is an integer.
     public void zero(IntConsumer printNumber) throws InterruptedException {
-        l.lock();
+        lock.lock();
         try {
-            for (int i = 1; i <= n; i++) {
-
-                if (curValue != 0) {
-                    z.await();
+            while (start <= n) {
+                if (state != 0) {
+                    zero.await();
                 }
                 printNumber.accept(0);
-
-                if (i % 2 == 1) {
-                    curValue = 1;
-                    o.signal();
+                if (start % 2 == 0) {
+                    state = 2;
+                    even.signal();
                 } else {
-                    curValue = 2;
-                    e.signal();
+                    state = 1;
+                    odd.signal();
                 }
+                zero.await();
             }
+            // 这里啥意思
+            odd.signal();
+            even.signal();
         } finally {
-            l.unlock();
+            lock.unlock();
         }
     }
 
+    //偶数
     public void even(IntConsumer printNumber) throws InterruptedException {
-
-        l.lock();
+        lock.lock();
         try {
-            for (int i = 2; i <= n; i += 2) {
-                if (curValue != 2) {
-                    e.await();
+            while (start <= n) {
+                if (state != 2) {
+                    even.await();
+                } else {
+                    printNumber.accept(start++);
+                    state = 0;
+                    zero.signal();
                 }
-                printNumber.accept(i);
-                curValue = 0;
-                z.signal();
             }
         } finally {
-            l.unlock();
+            lock.unlock();
         }
     }
 
+    //基数
     public void odd(IntConsumer printNumber) throws InterruptedException {
-        l.lock();
+        lock.lock();
         try {
-            for (int i = 1; i <= n; i += 2) {
-
-                if (curValue != 1) {
-                    o.await();
+            while (start <= n) {
+                if (state != 1) {
+                    odd.await();
+                } else {
+                    printNumber.accept(start++);
+                    state = 0;
+                    zero.signal();
                 }
-
-                printNumber.accept(i);
-                curValue = 0;
-                z.signal();
             }
-        }finally {
-            l.unlock();
+        } finally {
+            lock.unlock();
         }
     }
 

@@ -3,44 +3,6 @@ package p5_longestpalindromicsubstring;
 import java.util.Scanner;
 
 public class Solution {
-    // 暴力解法
-    /*
-    public String longestPalindrome(String s){
-        int len = s.length();
-        if (len < 2) return s;
-        int maxLen = 1;
-        int begin = 0;
-        // s.charAt(i) 每次都会检查数组下标越界，因此先转换为字符数组，这一步非必须
-        char[] charArray = s.toCharArray();
-        //枚举所有长度严格大于1的子串
-        for (int i = 0; i < len - 1; i++) {
-            for (int j = i + 1; j < len; j++){
-                // 可保证 j-i+1可保证得出的时最长子串
-                if (j - i + 1 > maxLen && validPalindromic(charArray, i, j)){
-                    maxLen = j - i + 1;
-                    begin = i;
-                }
-            }
-        }
-        return s.substring(begin, begin + maxLen);
-    }
-    //验证子串s[left .. right] 是否为回文串
-    private boolean validPalindromic(char[] charArray, int left, int right){
-        while (left < right){
-            if (charArray[left] != charArray[right]) return false;
-            left++;
-            right--;
-        }
-        return true;
-    }
-
-    public static void main(String[] args) {
-        String longestPalindromic = new Solution().longestPalindrome("ba");
-        System.out.println(longestPalindromic);
-
-    }
-     */
-
 
     // Dynamic Programing
     public String longestPalindrome(String s){
@@ -84,43 +46,39 @@ public class Solution {
     // 分为两种情况：
     // 1. 中心字符与相邻两边不相等
     // 2. 中心字符与相邻两边相等，此时要把所有相等的字符串作为中心
+    // 时间复杂度O(n ^ 2)
+
+
     public String longestPalindrome1(String s) {
-
-        if (s == null || s.length() == 0) {
-            return "";
+        if( s == null || s.length() < 2){
+            return s;
         }
-        int strLen = s.length();
-        int left = 0;
-        int right = 0;
-        int len = 1;
-        int maxStart = 0;
-        int maxLen = 0;
-
-        for (int i = 0; i < strLen; i++) {
-            left = i - 1;
-            right = i + 1;
-            // 向左寻找与当前相等的字符
-            while (left >= 0 && s.charAt(left) == s.charAt(i)) {
-                len++;
+        int len = s.length();
+        int currLen = 1;
+        int maxStart = 0, maxLen = 1;
+        // 将字符串转为字符数组效率会更高
+        char[] charArray = s.toCharArray();
+        for(int i = 0; i < len; i++){
+            int left = i - 1, right = i + 1;
+            while(left >= 0 && charArray[left] == charArray[i]){
                 left--;
+                currLen++;
             }
-            // 向右寻找与当前相等的字符
-            while (right < strLen && s.charAt(right) == s.charAt(i)) {
-                len++;
+            while(right < len && charArray[right] == charArray[i]){
                 right++;
+                currLen++;
             }
-            // 向中心的两边寻找对称相等的字符
-            while (left >= 0 && right < strLen && s.charAt(right) == s.charAt(left)) {
-                len = len + 2;
+            while(left >= 0 && right < len && charArray[left] == charArray[right]){
+                currLen += 2;
                 left--;
                 right++;
             }
-            // 记录最长回文字符串的起始位置
-            if (len > maxLen) {
-                maxLen = len;
+            if(currLen > maxLen){
+                maxLen = currLen;
                 maxStart = left;
             }
-            len = 1;
+            currLen = 1;
+
         }
         return s.substring(maxStart + 1, maxStart + maxLen + 1);
     }

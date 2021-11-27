@@ -1,9 +1,6 @@
 package p46_permutations;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 // attention！ 该题给定的数据没有  重复的序列
 public class Solution {
@@ -35,7 +32,8 @@ public class Solution {
             path.remove(path.size() - 1);
         }
     }
-    
+
+    // 如果res, path放在方法的外面，作为类的字段，程序会很慢
     public List<List<Integer>> permute2(int[] nums) {
 
         List<List<Integer>> res = new ArrayList<>();
@@ -57,10 +55,8 @@ public class Solution {
     }
     public static void main(String[] args) {
         int[] nums  = {1,2,3};
-        List<List<Integer>> res = new Solution().permute1(nums);
+        List<List<Integer>> res = new Solution().permute2(nums);
 
         System.out.println(res);
     }
-
-
 }

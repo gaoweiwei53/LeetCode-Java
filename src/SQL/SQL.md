@@ -111,7 +111,7 @@ limit 1,1;
    where
    e1.managerId = e2.Id and e1.salary > e2.salary
    ```
-7) 182. Duplicate Emails
+7) 182 Duplicate Emails
    ```mysql
    #  方法1
    select Email from
@@ -129,7 +129,7 @@ limit 1,1;
 
    ```
    
-8) 183. Customers Who Never Order
+8) 183 Customers Who Never Order
    ```mysql
    # 方法1
    SELECT Name as Customers
@@ -146,7 +146,7 @@ limit 1,1;
    );
    ```
    
-9) 184. Department Highest Salary 查询部门最高的薪水
+9) 184 Department Highest Salary 查询部门最高的薪水
    ```mysql
    SELECT
     Department.name AS 'Department',

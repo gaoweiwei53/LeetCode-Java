@@ -8,6 +8,12 @@ class Solution {
         }
         return single;
     }
+
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 1;
+        System.out.println(a ^ b);
+    }
 }
 
 // 使用异或运算：ab值不同结果为 1， 相同结果为0
